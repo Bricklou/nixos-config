@@ -1,0 +1,65 @@
+{
+  "nodes": {
+    "catppuccin-bat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1722864529,
+        "narHash": "sha256-s0CHTihXlBMCKmbBBb8dUhfgOOQu9PBCQ+uviy7o47w=",
+        "owner": "catppuccin",
+        "repo": "bat",
+        "rev": "d3feec47b16a8e99eabb34cdfbaa115541d374fc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "repo": "bat",
+        "type": "github"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1726985855,
+        "narHash": "sha256-NJPGK030Y3qETpWBhj9oobDQRbXdXOPxtu+YgGvZ84o=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "04213d1ce4221f5d9b40bcee30706ce9a91d148d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1726838390,
+        "narHash": "sha256-NmcVhGElxDbmEWzgXsyAjlRhUus/nEqPC5So7BOJLUM=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "944b2aea7f0a2d7c79f72468106bc5510cbf5101",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-24.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "catppuccin-bat": "catppuccin-bat",
+        "home-manager": "home-manager",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
