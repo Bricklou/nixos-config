@@ -41,6 +41,8 @@
     "en_US.UTF-8/UTF-8"
   ];
 
+  console.keyMap = "fr";
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
