@@ -4,45 +4,6 @@
   username,
   ...
 }: {
-  # ====================== User related ====================
-
-  # Define a user account. Don't forget to set a password with `passwd`.
-  users.users.${username} = {
-    isNormalUser = true;
-    description = username;
-    extraGroups = ["networkmanager" "wheel"];
-    shell = pkgs.fish;
-  };
-
-  # customize /etc/nix/nix.conf declaratively via `nix.settings`
-  nix.settings = {
-    # enable flakes globally
-    experimental-features = ["nix-command" "flakes"];
-  };
-
-  # do garbage collection weekly to keep disk usage low
-  nix.gc = {
-    automatic = lib.mkDefault true;
-    dates = lib.mkDefault "weekly";
-    options = lib.mkDefault "--delete-older-than 7d";
-  };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # Set your time zone.
-  time.timeZone = "Europe/Paris";
-
-  # Select internationalization properties.
-  i18n.defaultLocale = "fr_FR.UTF-8";
-
-  i18n.supportedLocales = [
-    "fr_FR.UTF-8/UTF-8"
-    "en_US.UTF-8/UTF-8"
-  ];
-
-  console.keyMap = "fr";
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -70,26 +31,6 @@
       emoji = ["Noto Color Emoji"];
     };
   };
-
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether
-  networking.firewall.enable = false;
-
-  # List packages installed in the system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    curl
-    git
-    lm_sensors #for `sensors` command
-    fastfetch
-    tmux
-  ];
-
-  # Enable fish shell
-  programs.fish.enable = true;
 
   programs.gnupg.agent = {
     enable = true;

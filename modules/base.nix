@@ -13,6 +13,7 @@
     p7zip
 
     # Text processing
+    neovim
     gnugrep # GNU Grep
 
     # Networking tools
@@ -25,10 +26,14 @@
     tree
     gnutar
     rsync
+    tmux
   ];
 
   nix.settings = {
     # enable flakes globally
     experimental-features = ["nix-command" "flakes"];
   };
+
+  # replace default editor with neovim
+  environment.variables.EDITOR = "nvim";
 }

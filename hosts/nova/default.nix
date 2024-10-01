@@ -8,10 +8,21 @@ let
 in {
   imports =
     [
-      ../../modules/system.nix
+      ../../modules/base.nix
+      ../../modules/bootloader.nix
+      ../../modules/i18n.nix
+      ../../modules/networking.nix
+      ../../modules/nix.nix
+      ../../modules/packages.nix
+      ../../modules/power.nix
+      ../../modules/users.nix
+
       ./bootloader.nix
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
+
+      # Present to keep things working
+      ../../modules/system.nix
     ];
 
   # Define your hostname

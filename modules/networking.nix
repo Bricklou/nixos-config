@@ -12,4 +12,7 @@
       userServices = true;
     };
   };
+
+  # Disable firewall globally
+  networking.firewall.enable = false;
 }
