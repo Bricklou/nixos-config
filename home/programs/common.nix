@@ -26,7 +26,7 @@
     tmux = {
       enable = true;
       clock24 = true;
-      extraConfig = "set mouse on";
+      extraConfig = "set -g mouse on";
     };
 
     eza.enable = true; # A modern replacement for `ls`

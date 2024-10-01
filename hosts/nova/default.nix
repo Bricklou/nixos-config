@@ -3,49 +3,23 @@
 # and in the NixOS manual (accessible by running `nixos-help`).
 
 { config, pkgs, ... }:
-
-{
+let
+  hostName = "nova"; # Define your hostname
+in {
   imports =
     [
       ../../modules/system.nix
+      ./bootloader.nix
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
-  # Bootloader.
-  boot.loader = {
-    efi = {
-      canTouchEfiVariables = true;
-    };
-    grub = {
-      enable = true;
-      device = "nodev";
-      efiSupport = true;
-      useOSProber = false;
-      gfxmodeEfi = "2880x1880";
-      extraEntries = ''
-menuentry 'Arch Linux' --class arch --class gnu-linux --class gnu --class os $menuentry_id_option 'gnulinux-simple-522d414c-a3eb-4746-8682-8a851c57eb07' {
-	insmod part_gpt
-	insmod fat
-	search --no-floppy --fs-uuid --set=root 7BC6-FEFD
-	linux /vmlinuz-linux root=/dev/dm-0
-	initrd /initramfs-linux.img
-}
-menuentry "Reboot" {
-	reboot
-}
-menuentry "Poweroff" {
-	halt
-}
-      '';
-    };
-  };
-
   # Define your hostname
-  networking.hostName = "nova";
+  networking = {
+    inherit hostName;
 
-  # Enable networking
-  networking.networkmanager.enable = true;
+    networkmanager.enable = true;
+  };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
