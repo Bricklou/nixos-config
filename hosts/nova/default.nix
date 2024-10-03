@@ -8,16 +8,7 @@ let
 in {
   imports =
     [
-      ../../modules/base/base.nix
-      ../../modules/base/bootloader.nix
-      ../../modules/base/i18n.nix
-      ../../modules/base/networking.nix
-      ../../modules/base/nix.nix
-      ../../modules/base/packages.nix
-      ../../modules/base/power.nix
-      ../../modules/base/users.nix
-
-      ../../modules/desktop
+      ../../modules/desktop.nix
 
       ./bootloader.nix
       # Include the results of the hardware scan.
