@@ -1,4 +1,5 @@
 {
+  pkgs,
   myvars,
   config,
   ...
@@ -22,6 +23,7 @@
       inherit (myvars) initialHashedPassword;
       home = "/home/${myvars.username}";
       isNormalUser = true;
+      shell = pkgs.fish;
       extraGroups = [
         myvars.username
         "users"

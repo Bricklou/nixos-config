@@ -18,9 +18,12 @@ tasks:
     cmds:
       - nix flake show --json 2>/dev/null | jq -r '.nixosConfigurations | keys.[]'
 
-  build:
-    desc: Dry-run build to ensure remote deployment
+  nova:build:
+    desc: Build to ensure the configuration is valid
     cmds:
-      - nixos-switch {{.NAME}} build
-    requires:
-      vars: ["NAME"]
+      - nixos-rebuild build --flake .#nova
+
+  nova:switch:
+    desc: Switch to the new configuration
+    cmds:
+      - nixos-rebuild switch --flake .#nova
