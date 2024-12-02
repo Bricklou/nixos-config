@@ -1,0 +1,22 @@
+version: "3"
+
+includes:
+  nix: .taskfiles/nix/Taskfile.yaml
+  sops: .taskfiles/sops/Taskfile.yaml
+
+tasks:
+  default:
+    silent: true
+    cmd: go-task -l
+
+  lint:
+    desc: Run statix lint
+    cmds:
+      - statix check .
+      - deadnix .
+
+  format:
+    desc: Check project files
+    cmds:
+      - alejandra {{.ROOT_DIR}}
+      - prettier -w .

@@ -1,4 +1,4 @@
-{ config, ... }: let
+{config, ...}: let
   browser = ["chromium.desktop"];
 in {
   xdg = {
@@ -15,6 +15,6 @@ in {
       extraConfig = {
         XDG_SCREENSHOTS_DIR = "${config.xdg.userDirs.pictures}/Screenshots";
       };
-   };
+    };
   };
 }

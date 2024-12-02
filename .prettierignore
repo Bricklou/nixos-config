@@ -1,0 +1,6 @@
+dist
+pnpm-lock.yaml
+flake.lock
+cache
+temp
+.temp

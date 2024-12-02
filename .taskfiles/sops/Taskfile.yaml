@@ -1,0 +1,18 @@
+---
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+version: "3"
+
+tasks:
+  update:
+    desc: Update all sops secrets
+    silent: true
+    dir: "{{.USER_WORKING_DIR}}"
+    vars:
+      SECRET_FILES:
+        sh: find . -type f -name '*.sops.yml' ! -name ".sops.yaml"
+    cmds:
+      - for: { var: SECRET_FILES }
+        cmd: |
+          echo "Updating {{ .ITEM }}"
+          sops updatekeys "{{ .ITEM }}"
