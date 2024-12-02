@@ -17,9 +17,10 @@
       # host specific modules
       "hosts/${name}"
     ];
-    home-modules =
-      map mylib.relativeToRoot [
-      ];
+    home-modules = map mylib.relativeToRoot [
+      # common
+      "home/linux/gui.nix"
+    ];
   };
 
   modules = base-modules;
