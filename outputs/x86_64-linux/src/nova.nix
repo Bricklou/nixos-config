@@ -14,6 +14,9 @@
 
   base-modules = {
     nixos-modules = map mylib.relativeToRoot [
+      # common
+      "modules/desktop.nix"
+
       # host specific modules
       "hosts/${name}"
     ];

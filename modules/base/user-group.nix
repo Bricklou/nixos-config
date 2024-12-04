@@ -1,5 +1,4 @@
 {
-  pkgs,
   myvars,
   config,
   ...
@@ -24,7 +23,6 @@
       hashedPassword = myvars.initialHashedPassword;
       home = "/home/${myvars.username}";
       isNormalUser = true;
-      shell = pkgs.fish;
       extraGroups = [
         myvars.username
         "users"

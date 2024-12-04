@@ -1,7 +1,6 @@
 {
   lib,
   pkgs,
-  catppuccin-bat,
   ...
 }: {
   home.packages = with pkgs; [
@@ -27,6 +26,7 @@
       enable = true;
       clock24 = true;
       extraConfig = "set -g mouse on";
+      catppuccin.enable = true;
     };
 
     eza.enable = true; # A modern replacement for `ls`

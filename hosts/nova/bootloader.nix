@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   # Bootloader
   boot.kernelParams = [
     "resume=/dev/mapper/vgpool-swap"
@@ -11,6 +11,7 @@
       device = "nodev";
       efiSupport = true;
       gfxmodeEfi = "2880x1880";
+      fontSize = 20;
       extraEntries = ''
         menuentry 'Arch Linux' --class arch --class gnu-linux --class os $menuentry_id_option 'gnulinux-simple-522d414c-a3eb-4746-8682-8a851c57eb07' {
         	insmod part_gpt

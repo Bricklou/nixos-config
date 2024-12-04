@@ -16,6 +16,7 @@
     fastfetch
     neovim #Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     go-task
+    direnv
     fish # fish shell
     git # used by nix flakes
     git-lfs

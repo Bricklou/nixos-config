@@ -5,6 +5,7 @@
 }: {
   home.packages = with pkgs; [
     docker-compose
+    lazydocker
 
     kubectl
     istioctl

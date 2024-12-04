@@ -75,8 +75,9 @@ in {
               configPath = "./.prettierrc.yaml"; # relative to the flake root
             };
           };
+          # INFO: both checks are disabled until local ignore PR are merged into upstream branches
           # deadnix.enable = true; # detect unused variable bindings in `*.nix`
-          statix.enable = true; # lints and suggestions for Nix code (auto suggestions)
+          # statix.enable = true; # lints and suggestions for Nix code (auto suggestions)
         };
       };
     }

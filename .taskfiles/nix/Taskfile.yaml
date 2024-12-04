@@ -17,6 +17,10 @@ tasks:
     desc: List the NixOS hosts in the flake
     cmds:
       - nix flake show --json 2>/dev/null | jq -r '.nixosConfigurations | keys.[]'
+  list-gen:
+    desc: List the NixOS generations
+    cmds:
+      - sudo nix-env -p /nix/var/nix/profiles/system --list-generations
 
   nova:build:
     desc: Build to ensure the configuration is valid
