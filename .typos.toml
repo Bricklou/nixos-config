@@ -4,3 +4,7 @@ ignore-files = true
 
 [default]
 binary = false
+# ignore some special identifiers)
+extend-ignore-re = [
+  "noice"
+]

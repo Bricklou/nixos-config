@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   imports = [
     ./base
     ./base.nix
@@ -6,5 +6,27 @@
     ./desktop
   ];
 
-  # TODO: add all configuration to add a graphical environment
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-kde
+    ];
+  };
+
+  services = {
+    xserver = {
+      enable = true;
+      videoDrivers = ["amdgpu"];
+      xkb.layout = "fr";
+    };
+
+    displayManager = {
+      sddm = {
+        enable = true;
+        wayland.enable = true;
+      };
+    };
+    desktopManager.plasma6.enable = true;
+  };
 }

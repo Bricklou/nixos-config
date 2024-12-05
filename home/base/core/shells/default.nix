@@ -5,6 +5,7 @@
   ...
 }: let
   shellAliases = {
+    "rmr" = "rm -r";
   };
 
   localBin = "${config.home.homeDirectory}/.local/bin";
@@ -29,10 +30,5 @@ in {
       exec ${pkgs-unstable.fish}/bin/fish $LOGIN_OPTION
            fi
     '';
-  };
-
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
   };
 }

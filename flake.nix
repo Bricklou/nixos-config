@@ -5,7 +5,7 @@
 
   # Inputs
   inputs = {
-    #NixOS official package source, using the nixos' unstable branch by default
+    # NixOS official package source, using the nixos' unstable branch by default
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable-small";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
