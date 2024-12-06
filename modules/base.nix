@@ -23,6 +23,7 @@
     tmux
 
     # archives
+    unzip
     zip
     xz
     zstd

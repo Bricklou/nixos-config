@@ -11,7 +11,6 @@
         # Mouse works as expected
                set -g mouse on
       '';
-      catppuccin.enable = true;
     };
   };
 }

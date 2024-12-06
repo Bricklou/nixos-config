@@ -36,5 +36,7 @@
     nix-gaming.url = "github:fufexan/nix-gaming";
 
     catppuccin.url = "github:catppuccin/nix";
+
+    plasma-manager.url = "github:nix-community/plasma-manager";
   };
 }

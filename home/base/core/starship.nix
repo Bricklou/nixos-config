@@ -5,7 +5,6 @@
 
   programs.starship = {
     enable = true;
-
-    # TODO: add starship theme
+    catppuccin.enable = true;
   };
 }

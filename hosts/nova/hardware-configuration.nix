@@ -14,7 +14,7 @@
   boot = {
     initrd = {
       availableKernelModules = ["nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" "sdhci_pci"];
-      kernelModules = ["dm-snapshot" "amdgpu"];
+      kernelModules = ["dm-snapshot"];
     };
     kernelModules = ["kvm-amd"];
     extraModulePackages = [];
@@ -29,6 +29,11 @@
     device = "/dev/disk/by-uuid/7BC6-FEFD";
     fsType = "vfat";
     options = ["fmask=0022" "dmask=0022"];
+  };
+  fileSystems."/mnt/shared_data" = {
+    device = "/dev/disk/by-uuid/cbfd063e-8d76-4249-80a8-791066eec0ed";
+    fsType = "ext4";
+    options = ["defaults" "user_xattr"];
   };
 
   swapDevices = [

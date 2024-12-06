@@ -3,10 +3,29 @@
   lib,
   ...
 }: {
-  # Use grub as bootloader for the system
-  boot.loader.grub = {
-    enable = true;
-    fontSize = lib.mkDefault 20;
+  boot = {
+    # Use grub as bootloader for the system
+    loader.grub = {
+      enable = true;
+      fontSize = lib.mkDefault 20;
+    };
+
+    # Plymouth for a nice boot splash
+    plymouth = {
+      enable = true;
+    };
+
+    # Enable "Silent boot"
+    consoleLogLevel = 0;
+    initrd.verbose = false;
+    kernelParams = [
+      "quiet"
+      "splash"
+      "boot.shell_on_fail"
+      "rd.systemd.show_status=false"
+      "rd.udev.log_level=3"
+      "udev.log_priority=3"
+    ];
   };
 
   # for power management

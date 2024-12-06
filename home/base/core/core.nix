@@ -27,9 +27,18 @@
       enableFishIntegration = true;
       git = true;
       icons = "auto";
+      extraOptions = ["--group"];
     };
 
     # a command-line fuzzy finder
-    fzf.enable = true;
+    fzf = {
+      enable = true;
+      catppuccin.enable = true;
+    };
+
+    lazygit = {
+      enable = true;
+      catppuccin.enable = true;
+    };
   };
 }
