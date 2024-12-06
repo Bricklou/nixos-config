@@ -13,6 +13,8 @@
     go-task # a command runner
     lazygit # Git terminal GUI
 
+    htop
+
     # nix related
     #
     # it provides the command `nom` works just like `nix`

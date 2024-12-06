@@ -11,5 +11,8 @@
     vdpauinfo
     vulkan-tools
     glxinfo
+
+    # media players
+    vlc
   ];
 }
