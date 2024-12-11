@@ -17,6 +17,9 @@
 
   boot.kernelModules = ["vfio-pci"];
 
+  # Enable binfmt emulation for aarch64-linux
+  boot.binfmt.emulatedSystems = ["aarch64-linux"];
+
   virtualisation = {
     docker = {
       enable = true;

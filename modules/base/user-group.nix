@@ -9,6 +9,9 @@
 
     groups = {
       "${myvars.username}" = {};
+      shared-data = {
+        gid = 2000;
+      };
       docker = {};
       # for android platform tools' udev rules
       adbusers = {};
@@ -26,6 +29,7 @@
       extraGroups = [
         myvars.username
         "users"
+        "shared-data"
         "networkmanager"
         "wheel"
         "docker"

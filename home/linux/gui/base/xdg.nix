@@ -32,7 +32,7 @@
       enable = true;
       # let `xdg-open` to open the url with the correct application
       defaultApplications = let
-        browser = ["firefox.desktop"];
+        browser = ["microsoft-edge.desktop"];
         editor = ["nvim.desktop" "code.desktop"];
       in {
         "application/json" = editor;
