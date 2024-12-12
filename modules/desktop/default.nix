@@ -1,6 +1,7 @@
 {
   mylib,
   catppuccin,
+  system,
   ...
 }: {
   imports =

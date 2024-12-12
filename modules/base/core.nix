@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}: {
+{lib, ...}: {
   boot = {
     # Use grub as bootloader for the system
     loader.grub = {
