@@ -38,7 +38,7 @@
       enable = true;
       # Hanging this option to false may cause file permissions issues for existing guests.
       # To fix these, manually change ownership of affected files in /var/lib/libvirt/qemu to qemu-libvirtd
-      qemu.runAsRoot = false;
+      qemu.runAsRoot = true;
       qemu.vhostUserPackages = with pkgs; [
         # virtiofsd
         virtiofsd
