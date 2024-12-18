@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}: {
+{lib, ...}: {
   # Bootloader
   boot.kernelParams = [
     "resume=/dev/mapper/vgpool-swap"

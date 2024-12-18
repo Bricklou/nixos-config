@@ -18,6 +18,9 @@ in {
     enable = true;
     package = pkgs-unstable.fish;
     inherit shellAliases;
+    shellInit = ''
+      fish_add_path ${localBin} ${goBin} ${rustBin}
+    '';
   };
 
   programs.bash = {

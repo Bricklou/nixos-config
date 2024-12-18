@@ -34,6 +34,8 @@
           insteadOf = "https://github.com/bricklou";
         };
       };
+
+      diff.sopsdiffer.textconv = "sops decrypt";
     };
 
     # A syntax-highlitghing pager in Rust (2019 ~ Now)

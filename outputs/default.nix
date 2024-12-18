@@ -43,7 +43,6 @@
   allSystems = nixosSystems;
   allSystemNames = builtins.attrNames allSystems;
   nixosSystemValues = builtins.attrValues nixosSystems;
-  allSystemValues = nixosSystemValues;
 
   # Helper function to generate a set of attributes for each system
   forAllSystems = func: (nixpkgs.lib.genAttrs allSystemNames func);
@@ -108,6 +107,8 @@ in {
           # spell-checker
           typos
           nodePackages.prettier
+          # encryption
+          sops
         ];
         name = "dots";
         shellHook = ''

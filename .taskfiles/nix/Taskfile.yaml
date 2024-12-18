@@ -31,3 +31,13 @@ tasks:
     desc: Switch to the new configuration
     cmds:
       - nixos-rebuild switch --flake .#nova
+
+  vpn-server:build:
+    desc: Build to ensure the configuration is valid
+    cmds:
+      - nixos-rebuild build --flake .#vpn-server --show-trace --verbose
+
+  vpn-server:switch:
+    desc: Switch to the new configuration
+    cmds:
+      - nixos-rebuild switch --flake .#vpn-server

@@ -1,6 +1,7 @@
 [files]
 ignore-dot = true
 ignore-files = true
+extend-exclude = ["secrets/**/*.sops.yaml"]
 
 [default]
 binary = false

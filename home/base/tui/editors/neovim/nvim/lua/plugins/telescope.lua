@@ -43,6 +43,23 @@ return {
     require("telescope").setup {
       defaults = {
         buffer_previewer_maker = new_maker,
+        vimgrep_arguments = {
+          "rg",
+          "--color=never",
+          "--no-heading",
+          "--with-filename",
+          "--line-number",
+          "--column",
+          "--smart-case",
+          "--hidden",
+          "--no-ignore",
+        },
+        find_command = { "fd", "--type", "f", "--hidden", "--follow", "--exclude", ".git" },
+      },
+      pickers = {
+        find_files = {
+          hidden = true,
+        },
       },
     }
   end,

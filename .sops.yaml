@@ -1,0 +1,7 @@
+keys:
+  - &admin-louis age12zlz6lvcdk6eqaewfylg35w0syh58sm7gh53q5vvn7hd7c6nngyseftjxl
+creation_rules:
+  - path_regex: secrets/vpn-server/[^/]+\.(yaml|json|env|ini)$
+    key_groups:
+      - pgp:
+          - *admin-louis

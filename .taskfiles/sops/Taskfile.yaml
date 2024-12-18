@@ -10,7 +10,7 @@ tasks:
     dir: "{{.USER_WORKING_DIR}}"
     vars:
       SECRET_FILES:
-        sh: find . -type f -name '*.sops.yml' ! -name ".sops.yaml"
+        sh: find . -type f -name '*.sops.yaml' ! -name ".sops.yaml"
     cmds:
       - for: { var: SECRET_FILES }
         cmd: |
