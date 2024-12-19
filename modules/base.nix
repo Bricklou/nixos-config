@@ -3,8 +3,8 @@
   myvars,
   ...
 }: {
-  # auto upgrade nix to the unstable version
-  # https://github.com/NixOS/nixpkgs/blobl/nixos-unstable/pkgs/tools/package-management/nix/default.nix#L24
+  # auto upgrade nix to the version
+  # https://github.com/NixOS/nixpkgs/blobl/nixos/pkgs/tools/package-management/nix/default.nix#L24
   nix.package = pkgs.nixVersions.latest;
 
   # for security reasons, do not load neovim's user config
