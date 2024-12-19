@@ -7,7 +7,6 @@
       name = "kvantum";
     };
     style = {
-      catppuccin.enable = true;
       name = "kvantum";
     };
   };

@@ -35,12 +35,10 @@
     # a command-line fuzzy finder
     fzf = {
       enable = true;
-      catppuccin.enable = true;
     };
 
     lazygit = {
       enable = true;
-      catppuccin.enable = true;
     };
   };
 }

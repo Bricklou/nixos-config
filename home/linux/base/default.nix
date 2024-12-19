@@ -12,5 +12,11 @@
   catppuccin = {
     enable = true;
     flavor = "mocha";
+
+    starship.enable = true;
+    lazygit.enable = true;
+    fzf.enable = true;
+    k9s.enable = true;
+    kvantum.enable = true;
   };
 }

@@ -14,7 +14,6 @@
       enable = true;
       # https://k9scli.io/topics/aliases
       settings = {};
-      catppuccin.enable = true;
     };
   };
 }
