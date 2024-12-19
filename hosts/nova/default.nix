@@ -7,6 +7,7 @@ in {
   imports = [
     ../../modules/desktop.nix
 
+    ./vpn.nix
     ./bootloader.nix
     # Include the results of the hardware scan.
     ./hardware-configuration.nix

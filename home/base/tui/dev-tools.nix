@@ -20,6 +20,9 @@
     # db related
     pkgs-unstable.pgcli
     sqlite
+
+    # ssh related
+    sshuttle
   ];
 
   programs = {
