@@ -1,8 +1,4 @@
-{
-  pkgs,
-  pkgs-unstable,
-  ...
-}: {
+{pkgs, ...}: {
   ############################################################
   #
   # Basic settings for development environment
@@ -18,7 +14,7 @@
     colmena # nixos's remote deployment tool
 
     # db related
-    pkgs-unstable.pgcli
+    pgcli
     sqlite
 
     # ssh related

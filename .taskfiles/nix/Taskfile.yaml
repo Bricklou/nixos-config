@@ -22,22 +22,32 @@ tasks:
     cmds:
       - sudo nix-env -p /nix/var/nix/profiles/system --list-generations
 
+  # NixOS laptop
   nova:build:
     desc: Build to ensure the configuration is valid
     cmds:
       - nixos-rebuild build --flake .#nova
-
   nova:switch:
     desc: Switch to the new configuration
     cmds:
       - nixos-rebuild switch --flake .#nova
 
+  # NixOS VPN server (temporary configuration)
   vpn-server:build:
     desc: Build to ensure the configuration is valid
     cmds:
       - nixos-rebuild build --flake .#vpn-server --show-trace --verbose
-
   vpn-server:switch:
     desc: Switch to the new configuration
     cmds:
       - nixos-rebuild switch --flake .#vpn-server
+
+  # Home-manager Archlinux laptop
+  nova-arch:build:
+    desc: Build to ensure the configuration is valid
+    cmds:
+      - home-manager build --flake .#nova-arch
+  nova-arch:switch:
+    desc: Switch to the new configuration
+    cmds:
+      - home-manager switch --flake .#nova-arch

@@ -1,8 +1,4 @@
-{
-  pkgs,
-  pkgs-unstable,
-  ...
-}: {
+{pkgs, ...}: {
   nixpkgs.config = {
     programs.npm.npmrc = ''
       prefix = ''${HOME}/.npm-global
@@ -40,7 +36,7 @@
       marksman # language server for markdown
       glow # markdown previewer
       pandoc # document converter
-      pkgs-unstable.hugo # static site generator
+      hugo # static site generator
 
       #-- sql
       sqlfluff
@@ -97,11 +93,11 @@
 
       #-- rust
       # we'd better use the rust-overlays for rust development
-      pkgs-unstable.rustc
-      pkgs-unstable.rust-analyzer
-      pkgs-unstable.cargo # rust package manager
-      pkgs-unstable.rustfmt
-      pkgs-unstable.clippy # rust linter
+      rustc
+      rust-analyzer
+      cargo # rust package manager
+      rustfmt
+      clippy # rust linter
 
       #-- golang
       go
@@ -149,7 +145,7 @@
       (
         if pkgs.stdenv.isDarwin
         then pkgs.emptyDirectory
-        else pkgs-unstable.akkuPackages.scheme-langserver
+        else akkuPackages.scheme-langserver
       )
     ]
     ++ [

@@ -1,13 +1,12 @@
 {
   config,
   pkgs,
-  pkgs-unstable,
   ...
 }: {
   # add user's shel into /etc/shells
   environment.shells = with pkgs; [
     bashInteractive
-    pkgs-unstable.fish
+    fish
   ];
 
   # set user's default shell system-wide

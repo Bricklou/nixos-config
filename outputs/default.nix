@@ -53,6 +53,9 @@ in {
   # NixOS Hosts
   nixosConfigurations = lib.attrsets.mergeAttrsList (map (it: it.nixosConfigurations or {}) nixosSystemValues);
 
+  # Home Manager Hosts
+  homeConfigurations = lib.attrsets.mergeAttrsList (map (it: it.homeConfigurations or {}) nixosSystemValues);
+
   # Packages
   packages = forAllSystems (
     system: allSystems.${system}.packages or {}
@@ -104,6 +107,7 @@ in {
           alejandra
           deadnix
           statix
+          home-manager
           # spell-checker
           typos
           nodePackages.prettier

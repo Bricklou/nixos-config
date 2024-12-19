@@ -16,7 +16,7 @@ in {
 
   programs.fish = {
     enable = true;
-    package = pkgs-unstable.fish;
+    package = pkgs.fish;
     inherit shellAliases;
     shellInit = ''
       fish_add_path ${localBin} ${goBin} ${rustBin}
@@ -30,7 +30,7 @@ in {
            if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
            then
              shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
-      exec ${pkgs-unstable.fish}/bin/fish $LOGIN_OPTION
+      exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
            fi
     '';
   };

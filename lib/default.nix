@@ -1,5 +1,6 @@
 {lib, ...}: {
   nixosSystem = import ./nixosSystem.nix;
+  homeSystem = import ./homeSystem.nix;
 
   # use path relative to the root of the project
   relativeToRoot = lib.path.append ../.;
