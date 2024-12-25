@@ -11,6 +11,7 @@
 
     # misc
     spectacle
+    kcalc
   ];
 
   # allow fontconfig to discover fonts and configurations installed through home.packages

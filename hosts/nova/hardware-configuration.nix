@@ -5,6 +5,7 @@
   config,
   lib,
   modulesPath,
+  pkgs,
   ...
 }: {
   imports = [
@@ -49,4 +50,15 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  services.udev.packages = [
+    (pkgs.writeTextFile
+      {
+        name = "amdgpu_udev";
+        text = ''
+          KERNEL=="card1", SUBSYSTEM=="drm", DRIVERS=="amdgpu", ATTR{device/power_dpm_force_performance_level}="high"
+        '';
+        destination = "/etc/udev/rules.d/30-amdgpu-pm.rules";
+      })
+  ];
 }

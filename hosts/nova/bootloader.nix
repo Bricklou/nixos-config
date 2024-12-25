@@ -2,6 +2,8 @@
   # Bootloader
   boot.kernelParams = [
     "resume=/dev/mapper/vgpool-swap"
+    "video=2800x1800@60"
+    "amdgpu.sg_display=0"
   ];
   boot.loader = {
     efi = {
