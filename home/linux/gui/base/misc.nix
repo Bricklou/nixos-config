@@ -12,6 +12,8 @@
     # misc
     spectacle
     kcalc
+    filelight
+    kdePackages.kdeconnect-kde
   ];
 
   # allow fontconfig to discover fonts and configurations installed through home.packages
