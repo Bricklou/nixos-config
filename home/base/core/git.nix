@@ -28,6 +28,11 @@
       push.autoSetupRemote = true;
       pull.rebase = true;
 
+      user.signingKey = "25209AE7B044285E";
+
+      commit.gpgSign = true;
+      tag.gpgSign = true;
+
       # replace https with ssh
       url = {
         "ssh://git@github.com/bricklou" = {
