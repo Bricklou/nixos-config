@@ -20,7 +20,6 @@
     fish # fish shell
     git # used by nix flakes
     git-lfs
-    zellij
 
     # archives
     unzip

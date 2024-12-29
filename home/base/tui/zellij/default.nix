@@ -1,14 +1,27 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  config,
+  system,
+  ...
+}: let
   shellAliases = {
     "zj" = "open_zellij";
     "zellij" = "open_zellij";
   };
 
   zellijBin = "${pkgs.zellij}/bin/zellij";
+
+  zellij-autolock = pkgs.fetchurl {
+    url = "https://github.com/fresh2dev/zellij-autolock/releases/download/0.2.1/zellij-autolock.wasm";
+    hash = "sha256-3KvHgNdJdb8Nd83OxxrKFuzM6nAjn0G0wyebOI9zs40=";
+  };
+
+  configTemplate = builtins.readFile ./config.kdl;
+  # Replace the placeholder with the actual path
+  configFile = builtins.replaceStrings ["\${triggers}"] ["${pkgs.neovim-unwrapped}/bin/nvim"] configTemplate;
 in {
   programs.zellij = {
     enable = true;
-    package = pkgs.zellij;
   };
   # auto start zellij in fish shell
   programs.fish.shellInit = ''
@@ -48,8 +61,9 @@ in {
     end
   '';
 
-  home.shellAliases = shellAliases;
   programs.fish.shellAliases = shellAliases;
 
-  xdg.configFile."zellij/config.kdl".source = ./config.kdl;
+  # xdg.configFile."zellij/config.kdl".source = ./config.kdl;
+  xdg.configFile."zellij/config.kdl".text = configFile;
+  xdg.configFile."zellij/plugins/zellij-autolock.wasm".source = zellij-autolock;
 }
