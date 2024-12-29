@@ -1,3 +1,4 @@
+---@type LazySpec
 return {
   "fresh2dev/zellij.vim",
   -- Pin version to avoid breaking changes.
