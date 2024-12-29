@@ -13,6 +13,7 @@ let
   shellAliases = {
     v = "nvim";
     vdiff = "nvim -d";
+    kubectl = "kubecolor";
   };
   # the path to nvim directory
   # to make this symlink work, we need to git clone this repo to your home directory.
@@ -22,7 +23,7 @@ in {
   xdg.configFile."nvim/init.lua".enable = false;
 
   home.shellAliases = shellAliases;
-  programs.nushell.shellAliases = shellAliases;
+  programs.fish.shellAliases = shellAliases;
 
   programs = {
     neovim = {
