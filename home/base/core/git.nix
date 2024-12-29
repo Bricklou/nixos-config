@@ -40,6 +40,13 @@
         };
       };
 
+      aliases = {
+        # git commit
+        cm = "commit --message";
+        cam = "commit --amend --message";
+        cane = "commit --amend --no-edit";
+      };
+
       diff.sopsdiffer.textconv = "sops decrypt";
     };
 
