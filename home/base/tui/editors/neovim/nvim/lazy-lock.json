@@ -10,7 +10,6 @@
   "astrolsp": { "branch": "main", "commit": "2f6b0a4059775a1dac011d2944dd41fd4a8fe7a8" },
   "astrotheme": { "branch": "main", "commit": "7aa05c0ada35ff127f151f70b0ba2d042953eeb4" },
   "astroui": { "branch": "main", "commit": "076766c1d422db486378354729f8fa7c1a68b745" },
-  "autosave.nvim": { "branch": "main", "commit": "348f72cf0241e3e736e3396c4834def2f8ef8d10" },
   "catppuccin": { "branch": "main", "commit": "f67b886d65a029f12ffa298701fb8f1efd89295d" },
   "clangd_extensions.nvim": {
     "branch": "main",
@@ -83,7 +82,8 @@
   "nvim-dap-go": { "branch": "main", "commit": "6aa88167ea1224bcef578e8c7160fe8afbb44848" },
   "nvim-dap-python": { "branch": "master", "commit": "34282820bb713b9a5fdb120ae8dd85c2b3f49b51" },
   "nvim-dap-ui": { "branch": "master", "commit": "ffa89839f97bad360e78428d5c740fdad9a0ff02" },
-  "nvim-jdtls": { "branch": "master", "commit": "ece818f909c6414cbad4e1fb240d87e003e10fda" },
+  "nvim-jdtls": { "branch": "master", "commit": "8f14aa1922ee5491ded1079a6576fae834535658" },
+  "nvim-k8s-crd": { "branch": "main", "commit": "f5f59feecc2a9fad0ab0ae9d223c886da0666465" },
   "nvim-lsp-file-operations": {
     "branch": "master",
     "commit": "9744b738183a5adca0f916527922078a965515ed"
@@ -93,7 +93,7 @@
   "nvim-notify": { "branch": "master", "commit": "29b33efc802a304b1cf13ab200915d4e9e67373d" },
   "nvim-scrollbar": { "branch": "main", "commit": "6994eb9f73d5fdc36ee2c8717940e8c853e51a49" },
   "nvim-spectre": { "branch": "master", "commit": "08be31c104df3b4b049607694ebb2b6ced4f928b" },
-  "nvim-spider": { "branch": "main", "commit": "4055f3c82ec3e712b83d8149cbc5489e442b826e" },
+  "nvim-spider": { "branch": "main", "commit": "2b38e3e95e143313d78ca098eeecda7aebfce925" },
   "nvim-treesitter": { "branch": "master", "commit": "337b503688eccb3046547661e4c738e674548fcf" },
   "nvim-treesitter-textobjects": {
     "branch": "master",
