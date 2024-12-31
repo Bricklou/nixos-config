@@ -115,6 +115,24 @@ return {
           },
         },
       },
+      yamlls = {
+        settings = {
+          yaml = {
+            schemas = {
+              ["file:///home/louis/.cache/k8s-schemas/default/all.json"] = "/*.yaml",
+              ["http://json.schemastore.org/kustomization"] = "/kustomization.yaml",
+            },
+          },
+        },
+      },
+    },
+    capabilities = {
+      textDocument = {
+        foldingRange = {
+          dynamicRegistration = false,
+          lineFoldingOnly = true,
+        },
+      },
     },
     -- customize how language servers are attached
     handlers = {

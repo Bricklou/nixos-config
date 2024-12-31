@@ -27,35 +27,37 @@ in {
   programs.fish.shellInit = ''
     # auto start zellij
     # except when in emacs or zellij itself
-    if not set -q ZELLIJ; and not set -q INSIDE_EMACS
-      if set -q ZELLIJ_AUTO_ATTACH; and test $ZELLIJ_AUTO_ATTACH = "true"
-        ${zellijBin} attach -c
-      else
-        ${zellijBin}
-      end
-
-      # Auto exit the shell session when zellij exit
-      set -g ZELLIJ_AUTO_EXIT "false" # disable auto exit
-      if set -q ZELLIJ_AUTO_EXIT; and test $ZELLIJ_AUTO_EXIT = "true"
-        exit
-      end
-    end
-
-
-    # this function will check if a zellij session is running
-    # and if it is, it will attach to it
-    function open_zellij
-      set -l argc (count $argv)
-      if test $argc -gt 0
-        # Arguments are passed, pass them to Zellij
-        ${zellijBin} $argv
-      else
-        if set -q ZELLIJ
-          # Inside another Zellij instance, open a new tab
-          ${zellijBin} action new-tab
+    if status --is-interactive
+      if not set -q ZELLIJ; and not set -q INSIDE_EMACS; and not set -q VSCODE_STABLE
+        if set -q ZELLIJ_AUTO_ATTACH; and test $ZELLIJ_AUTO_ATTACH = "true"
+          ${zellijBin} attach -c
         else
-          # Not inside Zellij, open it
           ${zellijBin}
+        end
+
+        # Auto exit the shell session when zellij exit
+        set -g ZELLIJ_AUTO_EXIT "false" # disable auto exit
+        if set -q ZELLIJ_AUTO_EXIT; and test $ZELLIJ_AUTO_EXIT = "true"
+          exit
+        end
+      end
+
+
+      # this function will check if a zellij session is running
+      # and if it is, it will attach to it
+      function open_zellij
+        set -l argc (count $argv)
+        if test $argc -gt 0
+          # Arguments are passed, pass them to Zellij
+          ${zellijBin} $argv
+        else
+          if set -q ZELLIJ
+            # Inside another Zellij instance, open a new tab
+            ${zellijBin} action new-tab
+          else
+            # Not inside Zellij, open it
+            ${zellijBin}
+          end
         end
       end
     end

@@ -45,6 +45,7 @@ return {
   ---- Operation & Cloud Native
   { import = "astrocommunity.pack.terraform" },
   { import = "astrocommunity.pack.bash" },
+  { import = "astrocommunity.pack.fish" },
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.helm" },
 
