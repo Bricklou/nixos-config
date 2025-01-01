@@ -10,16 +10,16 @@ return {
   opts = {
     -- Configuration table of features provided by AstroLSP
     features = {
-      autoformat = true,      -- enable or disable auto formatting on start
-      codelens = true,        -- enable/disable codelens refresh on start
-      inlay_hints = true,     -- enable/disable inlay hints on start
+      autoformat = true, -- enable or disable auto formatting on start
+      codelens = true, -- enable/disable codelens refresh on start
+      inlay_hints = true, -- enable/disable inlay hints on start
       semantic_tokens = true, -- enable/disable semantic token highlighting
     },
     -- customize lsp formatting options
     formatting = {
       -- control auto formatting on save
       format_on_save = {
-        enabled = true,     -- enable or disable format on save globally
+        enabled = true, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           "go",
           "jsonnet",
@@ -46,44 +46,44 @@ return {
     -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
     servers = {
       ---- Data & Configuration Languages
-      "jsonls",      -- json language server
-      "jsonnet_ls",  -- jsonnet language server
-      "yamlls",      -- yaml language server
-      "taplo",       -- toml language server
-      "dagger",      -- cuelsp - cue language server
+      "jsonls", -- json language server
+      "jsonnet_ls", -- jsonnet language server
+      "yamlls", -- yaml language server
+      "taplo", -- toml language server
+      "dagger", -- cuelsp - cue language server
       "terraformls", -- terraform hcl
-      "marksman",    -- markdown ls
-      "nickel_ls",   -- nickel language server
-      "nil_ls",      -- nix language server
-      "buf_ls",      -- protocol buffer language server
-      "dockerls",    -- dockerfile
-      "cmake",       -- cmake language server
-      "sqls",        -- sql language server
+      "marksman", -- markdown ls
+      "nickel_ls", -- nickel language server
+      "nil_ls", -- nix language server
+      "buf_ls", -- protocol buffer language server
+      "dockerls", -- dockerfile
+      "cmake", -- cmake language server
+      "sqls", -- sql language server
 
       ---- General Purpose Languages
-      "clangd",        -- c/c++
-      "gopls",         -- go
-      "jdtls",         -- java language server, provides only basic features
+      "clangd", -- c/c++
+      "gopls", -- go
+      "jdtls", -- java language server, provides only basic features
       "rust_analyzer", -- rust
-      "pyright",       -- python
-      "ruff",          -- extremely fast Python linter and code transformation
+      "pyright", -- python
+      "ruff", -- extremely fast Python linter and code transformation
       -- "julials", -- julia language server
       -- "zls", -- zig language server
-      "lua_ls",  -- lua
-      "bashls",  -- bash
+      "lua_ls", -- lua
+      "bashls", -- bash
       "nushell", -- nushell language server
 
       ---- Web Development
-      "ts_ls",       -- typescript/javascript language server
+      "ts_ls", -- typescript/javascript language server
       "tailwindcss", -- tailwindcss language server
-      "html",        -- html language server
-      "cssls",       -- css language server
-      "prismals",    -- prisma language server
-      "volar",       -- vue language server
+      "html", -- html language server
+      "cssls", -- css language server
+      "prismals", -- prisma language server
+      "volar", -- vue language server
 
       ---- Lisp Like
       "scheme_langserver", -- scheme language server
-      "elixirls",          -- elixir language server
+      "elixirls", -- elixir language server
       -- "clojure_lsp", -- clojure language server"
 
       ---- Circuit Design
@@ -119,8 +119,8 @@ return {
         settings = {
           yaml = {
             schemas = {
-              ["file:///home/louis/.cache/k8s-schemas/default/all.json"] = "/*.yaml",
               ["http://json.schemastore.org/kustomization"] = "/kustomization.yaml",
+              ["file:///home/louis/.cache/k8s-schemas/default/all.json"] = "/*.yaml",
             },
           },
         },

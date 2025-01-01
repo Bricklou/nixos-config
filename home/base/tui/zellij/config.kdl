@@ -371,7 +371,7 @@ theme "catppuccin-mocha"
 // Examples:
 //
 // copy_command "xclip -selection clipboard" // x11
-// copy_command "wl-copy"                    // wayland
+copy_command "wl-copy"                    // wayland
 // copy_command "pbcopy"                     // osx
 
 // Choose the destination for copied text
@@ -381,7 +381,7 @@ theme "catppuccin-mocha"
 //   - system (default)
 //   - primary
 //
-// copy_clipboard "primary"
+copy_clipboard "system"
 
 // Enable or disable automatic copy (and clear) of selection when releasing mouse
 // Default: true
