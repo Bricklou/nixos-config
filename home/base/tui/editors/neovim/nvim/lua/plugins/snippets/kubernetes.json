@@ -15,5 +15,17 @@
       "",
       "$0"
     ]
+  },
+  "k8s Namespace": {
+    "prefix": "k-namespace",
+    "description": "k8s Namespace",
+    "body": [
+      "---",
+      "apiVersion: v1",
+      "kind: Namespace",
+      "metadata:",
+      "  name: ${1:namespace}",
+      "$0"
+    ]
   }
 }

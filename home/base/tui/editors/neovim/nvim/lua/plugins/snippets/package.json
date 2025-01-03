@@ -7,7 +7,7 @@
     "snippets": [
       {
         "language": "yaml",
-        "path": "./kustomization.json"
+        "path": "./kubernetes.json"
       }
     ]
   }
