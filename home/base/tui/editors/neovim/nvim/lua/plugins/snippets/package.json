@@ -1,0 +1,14 @@
+{
+  "name": "user snippets",
+  "engines": {
+    "vscode": "^1.110"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": "yaml",
+        "path": "./kustomization.json"
+      }
+    ]
+  }
+}
