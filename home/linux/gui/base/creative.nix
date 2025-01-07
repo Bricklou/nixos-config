@@ -1,10 +1,8 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     # creative
-    blender # 3d modeling
     gimp # image editing
     inkscape # vector graphics
-    krita # digital painting
   ];
 
   programs = {
