@@ -5,16 +5,16 @@ return {
   "nvim-treesitter/nvim-treesitter",
   dependencies = {
     -- NOTE: additional parser
-    { "nushell/tree-sitter-nu" }, -- nushell scripts
+    "monaqa/tree-sitter-mermaid",
   },
   opts = function(_, opts)
     opts.incremental_selection = {
       enable = true,
       keymaps = {
-        init_selection = "<C-space>", -- Ctrl + Space
+        init_selection = "<C-space>",    -- Ctrl + Space
         node_incremental = "<C-space>",
         scope_incremental = "<A-space>", -- Alt + Space
-        node_decremental = "<bs>", -- Backspace
+        node_decremental = "<bs>",       -- Backspace
       },
     }
     opts.ignore_install = { "gotmpl", "wing" }
