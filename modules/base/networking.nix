@@ -22,7 +22,7 @@
 
   services.resolved = {
     enable = true;
-    dnssec = "true";
+    dnssec = "false";
     domains = ["~."];
     fallbackDns = [
       "2606:4700:4700::1111"
