@@ -159,6 +159,8 @@
       fzf
       gdu # disk usage analyzer, required by AstroNvim
       (ripgrep.override {withPCRE2 = true;}) # recursively searches directories for a regex pattern
+      # rendering tools
+      plantuml
     ]
   );
 }

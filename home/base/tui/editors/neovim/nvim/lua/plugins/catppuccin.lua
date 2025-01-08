@@ -12,13 +12,5 @@ return {
     opts.integrations = {
       nvimtree = true,
     }
-
-    opts.highlight_overrides = {
-      mocha = function(mocha)
-        return {
-          NvimTreeNormal = { bg = mocha.none },
-        }
-      end,
-    }
   end,
 }
