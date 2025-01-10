@@ -40,5 +40,12 @@
     lazygit = {
       enable = true;
     };
+
+    # Disable `command-not-found` and use `nix-index` instead
+    command-not-found.enable = false;
+    nix-index = {
+      enable = true;
+      enableFishIntegration = true;
+    };
   };
 }

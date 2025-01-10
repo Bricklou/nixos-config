@@ -13,7 +13,9 @@
     rm -f ${config.home.homeDirectory}/.gitconfig
   '';
 
-  home.packages = with pkgs; [];
+  home.packages = with pkgs; [
+    github-cli
+  ];
 
   programs.git = {
     enable = true;

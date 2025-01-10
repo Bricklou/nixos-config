@@ -20,6 +20,14 @@ in {
     networkmanager.enable = true;
   };
 
+  services.openiscsi = {
+    enable = true;
+    name = "iqn.2020-08.org.linux-iscsi.initiatorhost:${hostName}";
+  };
+  systemd.tmpfiles.rules = [
+    "L+ /usr/local/bin - - - - /run/current-system/sw/bin/"
+  ];
+
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
   # Most users should NEVER change this value after the initial install, for any reason,

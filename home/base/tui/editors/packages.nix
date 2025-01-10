@@ -20,8 +20,6 @@
       nickel
 
       #-- json like
-      # terraform  # install via brew on macOS
-      terraform-ls
       jsonnet
       jsonnet-language-server
       taplo # TOML language server / formatter / validator
@@ -40,9 +38,6 @@
 
       #-- sql
       sqlfluff
-
-      #-- protocol buffer
-      buf # linting and formatting
     ]
     ++
     #-*- General Purpose Languages -*-#
@@ -64,7 +59,7 @@
 
       #-- python
       pyright # python language server
-      (python311.withPackages (
+      (python313.withPackages (
         ps:
           with ps; [
             ruff
@@ -72,9 +67,7 @@
             # debugpy
 
             # my commonly used python packages
-            jupyter
             ipython
-            pandas
             requests
             pyquery
             pyyaml
@@ -109,14 +102,11 @@
       delve # go debugger
 
       # -- java
-      jdk17
-      gradle
-      maven
-      spring-boot-cli
-      jdt-language-server
-
-      #-- zig
-      zls
+      # jdk17
+      # gradle
+      # maven
+      # spring-boot-cli
+      # jdt-language-server
 
       #-- lua
       stylua
@@ -137,30 +127,14 @@
       nodePackages."@tailwindcss/language-server"
       emmet-ls
     ]
-    # -*- Lisp like Languages -*-#
-    ++ [
-      guile
-      racket-minimal
-      fnlfmt # fennel
-      (
-        if pkgs.stdenv.isDarwin
-        then pkgs.emptyDirectory
-        else akkuPackages.scheme-langserver
-      )
-    ]
     ++ [
       proselint # English prose linter
-
-      #-- verilog / systemverilog
-      verible
 
       #-- Optional Requirements:
       nodePackages.prettier # common code formatter
       fzf
       gdu # disk usage analyzer, required by AstroNvim
       (ripgrep.override {withPCRE2 = true;}) # recursively searches directories for a regex pattern
-      # rendering tools
-      plantuml
     ]
   );
 }
