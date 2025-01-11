@@ -10,22 +10,7 @@
 
   # Add my custom lib, vars, nixpkgs instance and all the inputs to specialArgs,
   # so that I can use them in all my nixos/home-manager modules.
-  genSpecialArgs = system:
-    inputs
-    // {
-      inherit mylib myvars;
-
-      pkgs = import inputs.nixpkgs {
-        inherit system; # refer the `system` parameter form outer scope recursively
-        # To use chrome, we need to allow the installation of non-free software
-        config.allowUnfree = true;
-      };
-      pkgs-stable = import inputs.nixpkgs-stable {
-        inherit system; # refer the `system` parameter form outer scope recursively
-        # To use chrome, we need to allow the installation of non-free software
-        config.allowUnfree = true;
-      };
-    };
+  genSpecialArgs = system: inputs // {inherit mylib myvars;};
 
   #This is the args for all the haumea modules in this folder.
   args = {inherit inputs lib mylib myvars genSpecialArgs;};
