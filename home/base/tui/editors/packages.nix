@@ -129,6 +129,7 @@
     ]
     ++ [
       proselint # English prose linter
+      vale # English prose linter
 
       #-- Optional Requirements:
       nodePackages.prettier # common code formatter

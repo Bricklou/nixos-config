@@ -21,7 +21,7 @@ return {
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
   -- Language Support
   ---- Frontend & NodeJS
-  { import = "astrocommunity.pack.typescript-all-in-one" },
+  { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.prisma" },
@@ -40,10 +40,8 @@ return {
   { import = "astrocommunity.pack.cmake" },
   { import = "astrocommunity.pack.cpp" },
   -- { import = "astrocommunity.pack.nix" },  -- manually add config for nix, comment this one.
-  { import = "astrocommunity.pack.proto" },
 
   ---- Operation & Cloud Native
-  { import = "astrocommunity.pack.terraform" },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.fish" },
   { import = "astrocommunity.pack.docker" },
@@ -56,4 +54,7 @@ return {
   { import = "astrocommunity.motion.nvim-spider" },
   -- AI Assistant
   { import = "astrocommunity.completion.copilot-lua-cmp" },
+
+  -- Code Completion
+  { import = "astrocommunity.completion.cmp-emoji" },
 }
