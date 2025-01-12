@@ -36,8 +36,8 @@
           "--gtk-version=4"
           "--use-gl=angle"
           "--use-angle=gl"
-          "--enable-features=UseMultiPlaneFormatForHardwareVideo,VaapiVideoDecodeLinuxGL"
-          "--enable-features=AcceleratedVideoEncoder,AcceleratedVideoDecoder,VaapiVideoDecoder,VaapiVideoEncoder,PlatformHEVCDecoderSupport"
+          "--enable-features=UseMultiPlaneFormatForHardwareVideo,VaapiVideoDecodeLinuxGL,VaapiVideoEncodeLinuxGL"
+          "--enable-features=AcceleratedVideoEncoder,AcceleratedVideoDecoder,PlatformHEVCDecoderSupport"
           "--ozone-platform=wayland"
         ];
     })
