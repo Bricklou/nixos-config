@@ -26,6 +26,7 @@ return {
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.prisma" },
   { import = "astrocommunity.pack.vue" },
+  { import = "astrocommunity.pack.mdx" },
   ---- Configuration Language
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.json" },

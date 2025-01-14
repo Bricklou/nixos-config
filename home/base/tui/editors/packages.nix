@@ -126,6 +126,7 @@
       nodePackages.vscode-langservers-extracted
       nodePackages."@tailwindcss/language-server"
       emmet-ls
+      eslint_d
     ]
     ++ [
       proselint # English prose linter
