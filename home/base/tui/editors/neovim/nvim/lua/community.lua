@@ -26,12 +26,12 @@ return {
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.prisma" },
   { import = "astrocommunity.pack.vue" },
-  { import = "astrocommunity.pack.mdx" },
   ---- Configuration Language
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.toml" },
+  { import = "astrocommunity.pack.mdx" },
   ---- Backend / System
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.go" },

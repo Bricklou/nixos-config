@@ -24,37 +24,35 @@ return {
       -- common refactoring actions based off the Refactoring book by Martin Fowler
       code_actions.refactoring,
       code_actions.gomodifytags, -- Go - modify struct field tags
-      code_actions.impl, -- Go - generate interface method stubs
-      code_actions.statix, -- Lints and suggestions for Nix.
+      code_actions.impl,         -- Go - generate interface method stubs
+      code_actions.statix,       -- Lints and suggestions for Nix.
 
       -- Diagnostic
-      diagnostics.actionlint, -- GitHub Actions workflow syntax checking
-      diagnostics.buf, -- check text in current buffer
-      diagnostics.checkmake, -- check Makefiles
-      diagnostics.deadnix, -- Scan Nix files for dead code.
+      diagnostics.actionlint,                 -- GitHub Actions workflow syntax checking
+      diagnostics.buf,                        -- check text in current buffer
+      diagnostics.checkmake,                  -- check Makefiles
+      diagnostics.deadnix,                    -- Scan Nix files for dead code.
       require "none-ls.diagnostics.eslint_d", -- JavaScript linter
 
-      -- cra
-
       -- Formatting
-      formatting.prettier, -- js/ts/vue/css/html/json/... formatter
-      diagnostics.hadolint, -- Dockerfile linter
-      formatting.black, -- Python formatter
-      formatting.goimports, -- Go formatter
-      formatting.shfmt, -- Shell formatter
-      formatting.terraform_fmt, -- Terraform formatter
-      formatting.stylua, -- Lua formatter
-      formatting.alejandra, -- Nix formatter
-      formatting.sqlfluff.with { -- SQL formatter
+      formatting.prettier,                        -- js/ts/vue/css/html/json/... formatter
+      diagnostics.hadolint,                       -- Dockerfile linter
+      formatting.black,                           -- Python formatter
+      formatting.goimports,                       -- Go formatter
+      formatting.shfmt,                           -- Shell formatter
+      formatting.terraform_fmt,                   -- Terraform formatter
+      formatting.stylua,                          -- Lua formatter
+      formatting.alejandra,                       -- Nix formatter
+      formatting.sqlfluff.with {                  -- SQL formatter
         extra_args = { "--dialect", "postgres" }, -- change to your dialect
       },
-      formatting.nginx_beautifier, -- Nginx formatter
-      formatting.verible_verilog_format, -- Verilog formatter
-      formatting.emacs_scheme_mode, -- using emacs in batch mode to format scheme files.
-      formatting.fnlfmt, -- Format Fennel code
-      require "none-ls.formatting.rustfmt", -- Rust formatter
-      require "none-ls.formatting.eslint_d", -- JavaScript formatter
+      formatting.nginx_beautifier,                -- Nginx formatter
+      formatting.verible_verilog_format,          -- Verilog formatter
+      formatting.emacs_scheme_mode,               -- using emacs in batch mode to format scheme files.
+      formatting.fnlfmt,                          -- Format Fennel code
+      require "none-ls.formatting.rustfmt",       -- Rust formatter
+      require "none-ls.formatting.eslint_d",      -- JavaScript formatter
     }
-    return config -- return final config table
+    return config                                 -- return final config table
   end,
 }
