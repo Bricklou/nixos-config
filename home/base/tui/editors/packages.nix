@@ -111,6 +111,7 @@
       #-- lua
       stylua
       lua-language-server
+      luarocks
 
       #-- bash
       nodePackages.bash-language-server
@@ -127,6 +128,7 @@
       nodePackages."@tailwindcss/language-server"
       emmet-ls
       eslint_d
+      pnpm
     ]
     ++ [
       proselint # English prose linter
@@ -136,6 +138,7 @@
       nodePackages.prettier # common code formatter
       fzf
       gdu # disk usage analyzer, required by AstroNvim
+      tree-sitter
       (ripgrep.override {withPCRE2 = true;}) # recursively searches directories for a regex pattern
     ]
   );

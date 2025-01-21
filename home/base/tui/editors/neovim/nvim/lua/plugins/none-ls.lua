@@ -40,16 +40,11 @@ return {
       formatting.black,                           -- Python formatter
       formatting.goimports,                       -- Go formatter
       formatting.shfmt,                           -- Shell formatter
-      formatting.terraform_fmt,                   -- Terraform formatter
       formatting.stylua,                          -- Lua formatter
       formatting.alejandra,                       -- Nix formatter
       formatting.sqlfluff.with {                  -- SQL formatter
         extra_args = { "--dialect", "postgres" }, -- change to your dialect
       },
-      formatting.nginx_beautifier,                -- Nginx formatter
-      formatting.verible_verilog_format,          -- Verilog formatter
-      formatting.emacs_scheme_mode,               -- using emacs in batch mode to format scheme files.
-      formatting.fnlfmt,                          -- Format Fennel code
       require "none-ls.formatting.rustfmt",       -- Rust formatter
       require "none-ls.formatting.eslint_d",      -- JavaScript formatter
     }
