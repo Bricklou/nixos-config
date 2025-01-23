@@ -11,5 +11,4 @@ return {
       markdown = true,
     }
   end,
-  enabled = false,
 }
