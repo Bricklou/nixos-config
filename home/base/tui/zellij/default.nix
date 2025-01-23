@@ -30,7 +30,7 @@ in {
     if status --is-interactive
       if not set -q ZELLIJ; and not set -q INSIDE_EMACS; and not set -q VSCODE_STABLE
         if set -q ZELLIJ_AUTO_ATTACH; and test $ZELLIJ_AUTO_ATTACH = "true"
-          exec ${zellijBin} attach -c
+          ${zellijBin} attach -c
         else
           exec ${zellijBin}
         end
@@ -49,7 +49,7 @@ in {
         set -l argc (count $argv)
         if test $argc -gt 0
           # Arguments are passed, pass them to Zellij
-          exec ${zellijBin} $argv
+          ${zellijBin} $argv
         else
           if set -q ZELLIJ
             # Inside another Zellij instance, open a new tab
