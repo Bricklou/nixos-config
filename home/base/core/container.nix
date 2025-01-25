@@ -5,7 +5,6 @@
 
     kubectl
     kubecolor
-    istioctl
     kubevirt # virtctl
     kubernetes-helm
   ];

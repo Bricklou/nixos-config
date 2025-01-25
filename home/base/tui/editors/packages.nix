@@ -16,9 +16,6 @@
       deadnix # Find and remove unused code in .nix source files
       alejandra # Nix Code Formatter
 
-      #-- nickel lang
-      nickel
-
       #-- json like
       jsonnet
       jsonnet-language-server
@@ -43,19 +40,19 @@
     #-*- General Purpose Languages -*-#
     [
       #-- c/c++
-      cmake
-      cmake-language-server
-      gnumake
-      checkmake
+      # cmake
+      # cmake-language-server
+      # gnumake
+      # checkmake
       # c/c++ compiler, required by nvim-treesitter!
       gcc
       gdb
       # c/c++ tools with clang-tools, the unwrapped version won't
       # add alias like `cc` and `c++`, so that it won't conflict with gcc
       # llvmPackages.clang-unwrapped
-      clang-tools
-      lldb
-      vscode-extensions.vadimcn.vscode-lldb.adapter # codelldb - debugger
+      # clang-tools
+      # lldb
+      # vscode-extensions.vadimcn.vscode-lldb.adapter # codelldb - debugger
 
       #-- python
       pyright # python language server
@@ -65,22 +62,6 @@
             ruff
             black # python formatter
             # debugpy
-
-            # my commonly used python packages
-            ipython
-            requests
-            pyquery
-            pyyaml
-            boto3
-
-            ## emacs's lsp-bridge dependenciesge
-            # epc
-            # orjson
-            # sexpdata
-            # six
-            # setuptools
-            # paramiko
-            # rapidfuzz
           ]
       ))
 

@@ -16,6 +16,7 @@
     nixos-modules = map mylib.relativeToRoot [
       # common
       "modules/desktop.nix"
+      "modules/laptop.nix"
       "modules/amdgpu.nix"
 
       # host specific modules

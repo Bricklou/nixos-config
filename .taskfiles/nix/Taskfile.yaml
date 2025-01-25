@@ -22,6 +22,12 @@ tasks:
     cmds:
       - sudo nix-env -p /nix/var/nix/profiles/system --list-generations
 
+  clean:
+    desc: Clean the Nix store
+    cmds:
+      - home-manager expire-generations 0d
+      - sudo nix-collect-garbage -d
+
   # NixOS laptop
   nova:build:
     desc: Build to ensure the configuration is valid

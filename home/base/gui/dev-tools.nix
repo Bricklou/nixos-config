@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     # IDEs
-    jetbrains.pycharm-community-bin
-    jetbrains.idea-ultimate
+    # jetbrains.pycharm-community-bin
+    # jetbrains.idea-ultimate
   ];
 }

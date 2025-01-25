@@ -1,6 +1,6 @@
 return {
-  -- "anasinnyk/nvim-k8s-crd",
-  "Bricklou/nvim-k8s-crd",
+  "anasinnyk/nvim-k8s-crd",
+  -- "Bricklou/nvim-k8s-crd",
   event = { "BufEnter *.yaml" },
   dependencies = {
     { "neovim/nvim-lspconfig" },

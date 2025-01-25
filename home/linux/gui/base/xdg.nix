@@ -33,10 +33,11 @@
       # let `xdg-open` to open the url with the correct application
       defaultApplications = let
         browser = ["microsoft-edge.desktop"];
-        editor = ["nvim.desktop" "code.desktop"];
+        editor = ["nvim.desktop" "code.desktop" "kate.desktop"];
+        oketa = ["oketa.desktop"];
       in {
         "application/json" = editor;
-        "application/pdf" = browser;
+        "application/pdf" = oketa;
 
         "text/html" = browser;
         "text/xml" = editor;

@@ -4,7 +4,6 @@
     # audio control
     pavucontrol
     playerctl
-    pulsemixer
 
     # video/audio tools
     libva-utils

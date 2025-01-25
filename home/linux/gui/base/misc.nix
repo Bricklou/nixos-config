@@ -16,9 +16,6 @@
     kdePackages.kdeconnect-kde
 
     obsidian
-
-    # some app require a key store
-    libsecret
   ];
 
   # allow fontconfig to discover fonts and configurations installed through home.packages
