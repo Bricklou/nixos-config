@@ -5,6 +5,7 @@
   ...
 }: let
   shellAliases = {
+    "z" = "open_zellij";
     "zj" = "open_zellij";
     "zellij" = "open_zellij";
   };
@@ -29,16 +30,15 @@ in {
     # except when in emacs or zellij itself
     if status --is-interactive
       if not set -q ZELLIJ; and not set -q INSIDE_EMACS; and not set -q VSCODE_STABLE
-        if set -q ZELLIJ_AUTO_ATTACH; and test $ZELLIJ_AUTO_ATTACH = "true"
+        if test "$ZELLIJ_AUTO_ATTACH" = "true"
           ${zellijBin} attach -c
         else
-          exec ${zellijBin}
+          ${zellijBin}
         end
 
         # Auto exit the shell session when zellij exit
-        set -g ZELLIJ_AUTO_EXIT "false" # disable auto exit
-        if set -q ZELLIJ_AUTO_EXIT; and test $ZELLIJ_AUTO_EXIT = "true"
-          exit
+        if test "$ZELLIJ_AUTO_EXIT" = "true"
+          kill $fish_pid
         end
       end
 
@@ -56,7 +56,7 @@ in {
             ${zellijBin} action new-tab
           else
             # Not inside Zellij, open it
-            exec ${zellijBin}
+            ${zellijBin}
           end
         end
       end
