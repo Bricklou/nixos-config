@@ -6,5 +6,8 @@
 
     # HTTP Client
     hoppscotch
+    insomnia
+    # Redis Client
+    redisinsight
   ];
 }
