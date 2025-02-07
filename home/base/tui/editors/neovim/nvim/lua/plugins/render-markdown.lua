@@ -1,9 +1,21 @@
 return {
   "MeanderingProgrammer/render-markdown.nvim",
+  cmd = "RenderMarkdown",
   dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
-  -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
-  -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+  ft = function()
+    local plugin = require("lazy.core.config").spec.plugins["render-markdown.nvim"]
+    local opts = require("lazy.core.plugin").values(plugin, "opts", false)
+    return opts.file_types or { "markdown" }
+  end,
   ---@module 'render-markdown'
   ---@type render.md.UserConfig
   opts = {},
+  specs = {
+    {
+      "catppuccin",
+      optional = true,
+      ---@type CatppuccinOptions
+      opts = { integrations = { render_markdown = true } },
+    },
+  },
 }

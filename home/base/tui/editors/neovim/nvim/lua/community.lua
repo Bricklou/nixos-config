@@ -40,6 +40,7 @@ return {
   { import = "astrocommunity.pack.java" },
   { import = "astrocommunity.pack.cmake" },
   { import = "astrocommunity.pack.cpp" },
+  { import = "astrocommunity.pack.sql" },
   -- { import = "astrocommunity.pack.nix" },  -- manually add config for nix, comment this one.
 
   ---- Operation & Cloud Native
