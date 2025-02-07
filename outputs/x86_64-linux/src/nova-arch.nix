@@ -17,8 +17,10 @@
       (map mylib.relativeToRoot [
         "home/base/tui/editors/packages.nix"
         "home/base/tui/editors/neovim"
+        "home/base/tui/zellij"
       ])
       ++ [
+        (import (mylib.relativeToRoot "home/base/home.nix") (args // {inherit myvars;}))
         {
           home.homeDirectory = "/home/${myvars.username}";
           home.username = myvars.username;
