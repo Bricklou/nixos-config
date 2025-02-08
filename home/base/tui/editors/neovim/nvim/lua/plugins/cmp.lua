@@ -27,6 +27,7 @@ local kind_icons = {
 }
 
 ---@type LazyPlugin
+---@diagnostic disable-next-line: missing-fields
 return {
   "hrsh7th/nvim-cmp",
   opts = function(_, opts)
@@ -92,10 +93,10 @@ return {
     -- Override cmp source priority to display LSP items first in the completion list
     opts.sources = cmp.config.sources {
       { name = "nvim_lsp", priority = 1000 },
-      { name = "luasnip",  priority = 750 },
-      { name = "buffer",   priority = 500 },
-      { name = "path",     priority = 250 },
-      { name = "emoji",    priority = 700 },
+      { name = "luasnip", priority = 750 },
+      { name = "buffer", priority = 500 },
+      { name = "path", priority = 250 },
+      { name = "emoji", priority = 700 },
     }
 
     ---@type cmp.SortingConfig
@@ -107,12 +108,12 @@ return {
         function(entry1, entry2)
           -- Prioritize fields over other kinds of completion items
           if
-              entry1:get_kind() == cmp.lsp.CompletionItemKind.Field
-              and entry2:get_kind() ~= cmp.lsp.CompletionItemKind.Field
+            entry1:get_kind() == cmp.lsp.CompletionItemKind.Field
+            and entry2:get_kind() ~= cmp.lsp.CompletionItemKind.Field
           then
             return true
           elseif
-              entry2:get_kind() == cmp.lsp.CompletionItemKind.Field and entry1 ~= cmp.lsp.CompletionItemKind.Field
+            entry2:get_kind() == cmp.lsp.CompletionItemKind.Field and entry1 ~= cmp.lsp.CompletionItemKind.Field
           then
             return false
           end
@@ -142,7 +143,7 @@ return {
           -- Kind icons
           vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
           local color_item = require("nvim-highlight-colors").format(entry, vim_item)
-          item = lspkind.cmp_format {} (entry, vim_item)
+          item = lspkind.cmp_format {}(entry, vim_item)
           if color_item.abbr_hl_group then
             item.kind_hl_group = color_item.abbr_hl_group
             item.kind = color_item.abbr
