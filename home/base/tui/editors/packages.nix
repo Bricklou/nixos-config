@@ -56,12 +56,18 @@
 
       #-- python
       pyright # python language server
-      (python313.withPackages (
+      # (python313.withPackages (
+      #   ps:
+      #     with ps; [
+      #       black # python formatter
+      #       # debugpy
+      #     ]
+      # ))
+
+      (python311.withPackages (
         ps:
           with ps; [
             ruff
-            black # python formatter
-            # debugpy
           ]
       ))
 

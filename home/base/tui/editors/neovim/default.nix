@@ -29,6 +29,8 @@ in {
     neovim = {
       enable = true;
       package = pkgs.neovim-unwrapped;
+      extraLuaPackages = ps: [ps.magick];
+      extraPackages = [pkgs.imagemagick];
 
       # defaultEditor = true; # set EDITOR at system-wide level
       viAlias = true;

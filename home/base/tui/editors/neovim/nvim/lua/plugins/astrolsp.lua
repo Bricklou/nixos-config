@@ -86,9 +86,6 @@ return {
       "scheme_langserver", -- scheme language server
       "elixirls", -- elixir language server
       -- "clojure_lsp", -- clojure language server"
-
-      ---- Circuit Design
-      "verible", -- verilog language server
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields

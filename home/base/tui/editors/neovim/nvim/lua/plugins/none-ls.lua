@@ -13,7 +13,7 @@ return {
     local hover = null_ls.builtins.hover
     local completion = null_ls.builtins.completion
 
-    local eslint_d_args = { "--flag", "unstable_config_lookup_from_file" }
+    local eslint_args = { "--flag", "unstable_config_lookup_from_file" }
 
     -- Check supported formatters and linters
     -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/formatting
@@ -28,7 +28,7 @@ return {
       code_actions.impl,         -- Go - generate interface method stubs
       code_actions.statix,       -- Lints and suggestions for Nix.
       require("none-ls.code_actions.eslint_d").with {
-        extra_args = eslint_d_args,
+        extra_args = eslint_args,
       }, -- JavaScript linter
 
       -- Diagnostic
@@ -38,7 +38,7 @@ return {
       diagnostics.deadnix,     -- Scan Nix files for dead code.
       diagnostics.trail_space, -- check for trailing whitespace
       require("none-ls.diagnostics.eslint_d").with {
-        extra_args = eslint_d_args,
+        extra_args = eslint_args,
       }, -- JavaScript linter
 
       -- Formatting
@@ -55,7 +55,7 @@ return {
       },
       require "none-ls.formatting.rustfmt",       -- Rust formatter
       require("none-ls.formatting.eslint_d").with {
-        extra_args = eslint_d_args,
+        extra_args = eslint_args,
       },          -- JavaScript formatter
     }
     return config -- return final config table
