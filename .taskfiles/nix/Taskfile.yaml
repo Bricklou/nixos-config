@@ -27,6 +27,7 @@ tasks:
     cmds:
       - home-manager expire-generations 0d
       - sudo nix-collect-garbage -d
+      - nix-collect-garbage -d
 
   # NixOS laptop
   nova:build:
