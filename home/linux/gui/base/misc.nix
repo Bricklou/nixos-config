@@ -1,28 +1,34 @@
 {
   pkgs,
   lib,
+  kwin-effects-forceblur,
   ...
 }: {
-  home.packages = with pkgs; [
-    # GUI apps
+  home.packages = with pkgs;
+    [
+      # GUI apps
 
-    # instant messages
-    vesktop
-    discord
+      # instant messages
+      vesktop
+      discord
 
-    # remote desktop (rdp connect)
-    remmina
-    freerdp # required by remmina
+      # remote desktop (rdp connect)
+      remmina
+      freerdp # required by remmina
 
-    # misc
-    kdePackages.spectacle
-    kdePackages.kcalc
-    kdePackages.filelight
-    kdePackages.kdeconnect-kde
+      # misc
+      kdePackages.spectacle
+      kdePackages.kcalc
+      kdePackages.filelight
+      kdePackages.kdeconnect-kde
 
-    # knownledge base
-    obsidian
-  ];
+      # knownledge base
+      obsidian
+    ]
+    ++ [
+      # kwin effects force blur
+      kwin-effects-forceblur.packages.${pkgs.system}.default
+    ];
 
   # allow fontconfig to discover fonts and configurations installed through home.packages
   # Install fonts at system-level, not user-level
@@ -38,7 +44,7 @@
       enable_audio_bell = true;
       mouse_hide_wait = "2";
       window_padding_width = 5;
-      background_opacity = 0.95;
+      background_opacity = 0.90;
       background_blur = 3;
       sync_to_monitor = true;
       symbol_map = let
