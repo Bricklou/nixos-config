@@ -19,5 +19,6 @@
     k9s.enable = true;
     kvantum.enable = true;
     kitty.enable = true;
+    gtk.enable = true;
   };
 }
