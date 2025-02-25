@@ -7,7 +7,7 @@ return {
   "AstroNvim/astrocommunity",
   -- Motion
   { import = "astrocommunity.motion.mini-surround" },
-  -- https://github.com/echasnovski/mini.ai
+  { import = "astrocommunity.motion.mini-move" },
   { import = "astrocommunity.motion.mini-ai" },
   { import = "astrocommunity.motion.flash-nvim" },
   -- Highly experimental plugin that completely replaces
