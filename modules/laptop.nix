@@ -1,6 +1,4 @@
 {...}: {
-  boot.resumeDevice = "/dev/mapper/vgpool-swap";
-
   # suspend-then-hibernate
   # https://www.man7.org/linux/man-pages/man5/systemd-sleep.conf.5.html
   systemd.sleep.extraConfig = ''

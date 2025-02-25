@@ -1,14 +1,16 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
-let
+{disko, ...}: let
   hostName = "nova"; # Define your hostname
 in {
   imports = [
     ../../modules/desktop.nix
-
     ./vpn.nix
+
     ./bootloader.nix
+    disko.nixosModules.default
+    ./disko.nix
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
