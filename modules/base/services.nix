@@ -16,5 +16,5 @@
   };
 
   # Disable core dumps
-  services.coredump.enable = false;
+  systemd.coredump.enable = false;
 }
