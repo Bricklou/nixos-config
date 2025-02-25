@@ -15,9 +15,9 @@
     freerdp # required by remmina
 
     # misc
-    spectacle
-    kcalc
-    filelight
+    kdePackages.spectacle
+    kdePackages.kcalc
+    kdePackages.filelight
     kdePackages.kdeconnect-kde
 
     # knownledge base

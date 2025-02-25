@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   xdg.portal = {
     enable = true;
+    wlr.enable = true;
 
     config = {
       common = {
@@ -17,7 +18,7 @@
     # and vscode has open like `External Uri Openers`
     xdgOpenUsePortal = false;
     extraPortals = with pkgs; [
-      xdg-desktop-portal-kde
+      kdePackages.xdg-desktop-portal-kde
     ];
   };
 }
