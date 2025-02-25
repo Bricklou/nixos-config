@@ -8,7 +8,7 @@ return {
     local previewers = require "telescope.previewers"
 
     local _bad = { ".*%.csv", ".*%.min.js" } -- Put all filetypes that slow you down in this array
-    local filesize_threshold = 300 * 1024 -- 300KB
+    local filesize_threshold = 300 * 1024    -- 300KB
     local bad_files = function(filepath)
       for _, v in ipairs(_bad) do
         if filepath:match(v) then return false end
@@ -40,6 +40,15 @@ return {
       require("telescope").load_extension "undo"
     end
 
+    function generate_exclude_args(excludes)
+      local exclude_args = {}
+      for _, exclude in ipairs(excludes) do
+        table.insert(exclude_args, "--exclude")
+        table.insert(exclude_args, exclude)
+      end
+      return exclude_args
+    end
+
     require("telescope").setup {
       defaults = {
         buffer_previewer_maker = new_maker,
@@ -52,9 +61,11 @@ return {
           "--column",
           "--smart-case",
           "--hidden",
-          "--no-ignore",
         },
-        find_command = { "fd", "--type", "f", "--hidden", "--follow", "--exclude", ".git" },
+        find_command = vim.list_extend(
+          { "fd", "--type", "f", "--hidden", "--follow" },
+          generate_exclude_args { "node_modules", ".cache", ".git", ".nx" }
+        ),
       },
       pickers = {
         find_files = {
