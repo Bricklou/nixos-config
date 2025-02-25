@@ -7,7 +7,6 @@
         partitions = {
           # EFI System Partition
           ESP = {
-            name = "boot";
             type = "EF00";
             size = "512M";
             content = {
@@ -57,8 +56,6 @@
                   mountOptions = ["compress=zstd"];
                   mountpoint = "/home";
                 };
-                # Sub(sub)volume doesn't need a mountpoint as its parent is mounted
-                "/home/user" = {};
 
                 # Subvolume name is different from mountpoint
                 # Shared volume containing project files and other large data
