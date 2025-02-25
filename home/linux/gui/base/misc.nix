@@ -8,6 +8,7 @@
 
     # instant messages
     vesktop
+    discord
 
     # remote desktop (rdp connect)
     remmina
