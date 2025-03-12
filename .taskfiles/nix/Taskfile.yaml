@@ -38,6 +38,23 @@ tasks:
     desc: Switch to the new configuration
     cmds:
       - nixos-rebuild switch --flake .#nova
+  nova:update-bootloader:
+    # This task is here to update the grub configuration.
+    # This is only needed when the secondary have any kind of update
+    # to its boot configuration (systemd-boot).
+    desc: Update the bootloader
+    cmds:
+      - nixos-rebuild boot --flake .#nova --install-bootloader
+
+  # NixOS laptop (secondary system)
+  nebula:build:
+    desc: Build to ensure the configuration is valid
+    cmds:
+      - nixos-rebuild build --flake .#nebula
+  nebula:switch:
+    desc: Switch to the new configuration
+    cmds:
+      - nixos-rebuild switch --flake .#nebula
 
   # NixOS VPN server (temporary configuration)
   vpn-server:build:

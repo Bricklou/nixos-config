@@ -13,19 +13,27 @@
   name = "nova";
 
   base-modules = {
-    nixos-modules = map mylib.relativeToRoot [
-      # common
-      "modules/desktop.nix"
-      "modules/laptop.nix"
-      "modules/amdgpu.nix"
+    nixos-modules =
+      map mylib.relativeToRoot [
+        # common
+        "modules/desktop.nix"
+        "modules/laptop.nix"
+        "modules/amdgpu.nix"
 
-      # host specific modules
-      "hosts/${name}"
-    ];
-    home-modules = map mylib.relativeToRoot [
-      # common
-      "home/linux/gui.nix"
-    ];
+        # host specific modules
+        "hosts/${name}"
+      ]
+      ++ [
+        {modules.desktop.gaming = true;}
+      ];
+    home-modules =
+      map mylib.relativeToRoot [
+        # common
+        "home/linux/gui.nix"
+      ]
+      ++ [
+        {modules.desktop.gaming = true;}
+      ];
   };
 
   modules = base-modules;

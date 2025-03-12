@@ -1,4 +1,4 @@
-{
+{lib, ...}: {
   imports = [
     ../base/core
     ../base/tui
@@ -8,4 +8,9 @@
     ./base
     ./gui
   ];
+
+  # Desktop options
+  options.modules.desktop = {
+    gaming = lib.mkEnableOption "enable gaming related programs";
+  };
 }
