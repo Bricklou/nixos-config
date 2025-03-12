@@ -22,6 +22,8 @@
       kdePackages.filelight
       kdePackages.kdeconnect-kde
 
+      deskflow
+
       # knownledge base
       obsidian
     ]

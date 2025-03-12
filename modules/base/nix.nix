@@ -1,6 +1,7 @@
 {lib, ...}: {
   # to install chrome, you need to enable unfree packages
   nixpkgs.config.allowUnfree = lib.mkForce true;
+  nixpkgs.config.permittedInsecurePackages = ["deskflow-1.19.0"];
 
   nix = {
     # do garbage collection weekly to keep disk usage low

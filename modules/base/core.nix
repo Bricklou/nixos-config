@@ -1,11 +1,5 @@
-{lib, ...}: {
+{...}: {
   boot = {
-    # Use grub as bootloader for the system
-    loader.grub = {
-      enable = true;
-      fontSize = lib.mkDefault 20;
-    };
-
     # Plymouth for a nice boot splash
     plymouth = {
       enable = true;

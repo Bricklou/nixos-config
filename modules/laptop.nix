@@ -6,7 +6,7 @@
     AllowHibernate=yes
     AllowSuspendThenHibernate=yes
 
-    HibernateDelaySec=30min
+    HibernateDelaySec=1300
     HibernateOnACPower=yes
   '';
 

@@ -6,12 +6,12 @@
   ];
   boot.loader = {
     efi = {
-      canTouchEfiVariables = false;
+      canTouchEfiVariables = true;
     };
     grub = {
+      enable = true;
       device = "nodev";
       efiSupport = true;
-      efiInstallAsRemovable = true;
       gfxpayloadEfi = "1920x1200x32";
       gfxmodeEfi = "1920x1200x32";
       fontSize = lib.mkForce 34;

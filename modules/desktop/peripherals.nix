@@ -4,7 +4,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    pulseaudio # provides `pactl`, whici is required by some apps (e.g. sonic-pi)
+    pulseaudio # provides `pactl`, which is required by some apps (e.g. sonic-pi)
   ];
 
   # PipeWire is a new low-level multimedia framework.
@@ -47,10 +47,10 @@
 
   services = {
     printing.enable = true; # Enable CUPS to print documents
-    geoclue2.enable = true; # Enabble geolocation services.
+    geoclue2.enable = true; # Enable geolocation services.
 
     udev.packages = with pkgs; [
-      android-udev-rules #required by adb
+      android-udev-rules # required by adb
     ];
   };
 }
