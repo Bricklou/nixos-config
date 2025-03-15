@@ -27,6 +27,13 @@
       neededForBoot = true;
     };
   };
+
+  boot.resumeDevice = "/dev/disk/by-uuid/99dc9094-d9b5-4c72-81b3-5614b2a16b06";
+
+  swapDevices = [
+    {device = "/dev/disk/by-uuid/99dc9094-d9b5-4c72-81b3-5614b2a16b06";}
+  ];
+
   # disko.devices = {
   #   disk.main = {
   #     device = "/dev/nvme0n1";
