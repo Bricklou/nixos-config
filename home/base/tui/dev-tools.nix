@@ -19,7 +19,14 @@
 
     # ssh related
     sshuttle
+
+    # nodejs version managed
+    fnm
   ];
+
+  xdg.configFile."fish/conf.d/fnm.fish".text = ''
+    fnm env --use-on-cd --corepack-enabled --resolve-engines --shell fish | source
+  '';
 
   programs = {
     direnv = {

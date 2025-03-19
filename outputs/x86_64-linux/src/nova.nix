@@ -30,6 +30,7 @@
       map mylib.relativeToRoot [
         # common
         "home/linux/gui.nix"
+        "hosts/${name}/home.nix"
       ]
       ++ [
         {modules.desktop.gaming = true;}

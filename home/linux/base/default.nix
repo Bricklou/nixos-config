@@ -1,7 +1,9 @@
 {
   mylib,
   catppuccin,
+  config,
   pkgs,
+  lib,
   ...
 }: let
   # Create a custom overlay for the catppuccin kvantum theme
@@ -16,12 +18,12 @@
 
     buildPhase = ''
       # First create a copy of the source directory
-      ls -l ${catppuccin.packages.${pkgs.stdenv.hostPlatform.system}.kvantum.src}/themes/catppuccin-mocha-mauve
-      mkdir -p "$out/share/Kvantum/catppuccin-mocha-mauve"
-      cp -r ${catppuccin.packages.${pkgs.stdenv.hostPlatform.system}.kvantum.src}/themes/catppuccin-mocha-mauve/* "$out/share/Kvantum/catppuccin-mocha-mauve/"
+      ls -l ${catppuccin.packages.${pkgs.stdenv.hostPlatform.system}.kvantum.src}/themes/catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}
+      mkdir -p "$out/share/Kvantum/catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}"
+      cp -r ${catppuccin.packages.${pkgs.stdenv.hostPlatform.system}.kvantum.src}/themes/catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}/* "$out/share/Kvantum/catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}/"
 
       # Set the file path variable
-      configPath="$out/share/Kvantum/catppuccin-mocha-mauve/catppuccin-mocha-mauve.kvconfig"
+      configPath="$out/share/Kvantum/catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}/catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}.kvconfig"
 
       # Now modify the specific theme file you want to change
       sed -i 's/translucent_windows=false/translucent_windows=true/' "$configPath"
@@ -46,6 +48,7 @@ in {
   catppuccin = {
     enable = true;
     flavor = "mocha";
+    accent = lib.mkDefault "mauve";
 
     sources.kvantum = catppuccin-kvantum-patched;
 
