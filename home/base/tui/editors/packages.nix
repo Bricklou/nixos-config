@@ -70,6 +70,7 @@
       rustc
       rust-analyzer
       cargo # rust package manager
+      cargo-watch
       rustfmt
       clippy # rust linter
 

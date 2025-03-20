@@ -53,6 +53,7 @@ keybinds clear-defaults=true {
         bind "w" { ToggleFloatingPanes; SwitchToMode "Normal"; }
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
         bind "c" { SwitchToMode "RenamePane"; PaneNameInput 0;}
+        bind "i" { TogglePanePinned; SwitchToMode "Normal"; }
     }
     move {
         bind "Ctrl h" { SwitchToMode "Normal"; }
@@ -186,6 +187,7 @@ keybinds clear-defaults=true {
 
         bind "Ctrl g" { SwitchToMode "Locked"; }
         // bind "Ctrl q" { Quit; }
+        bind "Alt f" { ToggleFloatingPanes; }
         bind "Alt n" { NewPane; }
         bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
         bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
@@ -433,3 +435,4 @@ copy_clipboard "system"
 // The folder in which Zellij will look for themes
 //
 // theme_dir "/path/to/my/theme_dir"
+show_startup_tips false
