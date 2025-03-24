@@ -38,6 +38,12 @@
     # No separate install phase needed
     installPhase = "true";
   };
+
+  # Create a custom overlay for the catppuccin process-compose theme
+  catppuccin-process-compose-theme = builtins.fetchurl {
+    url = "https://raw.githubusercontent.com/catppuccin/process-compose/refs/heads/main/themes/catppuccin-mocha.yaml";
+    sha256 = "01h6ss8wf10ayii4fgb7fw41kpi2ai3r2y0vznk57gf6ggllg65y";
+  };
 in {
   imports =
     (mylib.scanPaths ./.)
@@ -60,4 +66,6 @@ in {
     kitty.enable = true;
     gtk.enable = true;
   };
+
+  xdg.configFile."process-compose/theme.yaml".source = catppuccin-process-compose-theme;
 }
