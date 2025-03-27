@@ -42,5 +42,8 @@
           "--ozone-platform=wayland"
         ];
     })
+
+    firefox
+    epiphany
   ];
 }
