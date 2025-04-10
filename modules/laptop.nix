@@ -5,8 +5,9 @@
     AllowSuspend=yes
     AllowHibernate=yes
     AllowSuspendThenHibernate=yes
+    AllowHybridSleep=yes
 
-    HibernateDelaySec=1300
+    HibernateDelaySec=30m
     HibernateOnACPower=yes
   '';
 
@@ -19,8 +20,12 @@
     powerKeyLongPress = "poweroff";
   };
 
+  # Enable hibernate, hybrid-sleep and suspend-then-hibernate
   systemd.targets = {
+    sleep.enable = true;
+    suspend.enable = true;
     hibernate.enable = true;
     suspend-then-hibernate.enable = true;
+    hybrid-sleep.enable = true;
   };
 }
