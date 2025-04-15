@@ -2,7 +2,7 @@
   home.packages = with pkgs; [
     # IDEs
     # jetbrains.pycharm-community-bin
-    # jetbrains.idea-ultimate
+    jetbrains.idea-ultimate
 
     # HTTP Client
     hoppscotch

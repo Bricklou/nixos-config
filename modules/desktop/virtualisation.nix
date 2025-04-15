@@ -43,6 +43,9 @@
         # virtiofsd
         virtiofsd
       ];
+      extraConfig = ''
+        uri_default = "qemu:///system"
+      '';
     };
   };
 

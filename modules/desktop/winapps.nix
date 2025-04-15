@@ -11,4 +11,9 @@ in {
     winapps.packages.${system}.winapps
     winapps.packages.${system}.winapps-launcher
   ];
+
+  environment.sessionVariables = rec {
+    # Set the default URI for libvirt
+    LIBVIRT_DEFAULT_URI = "qemu:///system";
+  };
 }

@@ -48,7 +48,7 @@ in {
   imports =
     (mylib.scanPaths ./.)
     ++ [
-      catppuccin.homeManagerModules.catppuccin
+      catppuccin.homeModules.catppuccin
     ];
 
   catppuccin = {
