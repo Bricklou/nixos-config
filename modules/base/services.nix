@@ -17,4 +17,6 @@
 
   # Disable core dumps
   systemd.coredump.enable = false;
+
+  services.fwupd.enable = true;
 }
