@@ -24,6 +24,7 @@
     fnm
 
     devenv
+    inotify-info
   ];
 
   xdg.configFile."fish/conf.d/fnm.fish".text = ''
