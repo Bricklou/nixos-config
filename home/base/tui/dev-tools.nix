@@ -25,6 +25,7 @@
 
     devenv
     inotify-info
+    dbeaver-bin
   ];
 
   xdg.configFile."fish/conf.d/fnm.fish".text = ''

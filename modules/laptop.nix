@@ -19,7 +19,13 @@
   # Enable hibernate
   systemd.targets = {
     sleep.enable = true;
-    suspend.enable = true;
+    suspend.enable = false;
     hibernate.enable = true;
   };
+
+  boot.kernelParams = [
+    # Currently needs amdgpu.dcdebugmask=0x10 as a Kernel parameters to avoid display glitches as shown in this issue.
+    # https://gitlab.freedesktop.org/drm/amd/-/issues/3388
+    "amdgpu.dcdebugmask=0x10"
+  ];
 }
