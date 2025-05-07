@@ -5,5 +5,6 @@
     profiles.default.userSettings = {
       "workbench.iconTheme" = "material-icon-theme";
     };
+    profiles.ALE.userSettings = {};
   };
 }
