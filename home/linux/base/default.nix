@@ -66,6 +66,7 @@ in {
     kitty.enable = true;
     gtk.enable = true;
     vscode.enable = false;
+    mako.enable = false;
   };
 
   xdg.configFile."process-compose/theme.yaml".source = catppuccin-process-compose-theme;
