@@ -65,6 +65,7 @@ in {
     kvantum.enable = true;
     kitty.enable = true;
     gtk.enable = true;
+    vscode.enable = false;
   };
 
   xdg.configFile."process-compose/theme.yaml".source = catppuccin-process-compose-theme;
