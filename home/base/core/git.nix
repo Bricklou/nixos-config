@@ -47,6 +47,13 @@
       diff.sopsdiffer.textconv = "sops decrypt";
     };
 
+    includes = [
+      {
+        path = "~/Documents/rainbow/.gitconfig";
+        condition = "gitdir:~/Documents/rainbow/";
+      }
+    ];
+
     # A syntax-highlitghing pager in Rust (2019 ~ Now)
     delta = {
       enable = true;
