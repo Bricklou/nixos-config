@@ -21,4 +21,8 @@
       kdePackages.xdg-desktop-portal-kde
     ];
   };
+
+  environment.systemPackages = with pkgs; [
+    displaycal
+  ];
 }
