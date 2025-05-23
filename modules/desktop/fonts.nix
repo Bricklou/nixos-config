@@ -34,6 +34,7 @@
       # other fonts
       dejavu_fonts
       liberation_ttf
+      inter
     ];
 
     #use defined fonts
