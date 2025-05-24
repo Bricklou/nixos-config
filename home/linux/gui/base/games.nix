@@ -10,6 +10,7 @@
       gamescope # SteamOs session compositing window manager
       prismlauncher # A free, open source launcher for Minecraft
       protontricks # A script to install DLLs needed to work around problems in Proton
+      lutris # A gaming platform for Linux that helps you install and manage games
     ];
   };
 }
