@@ -4,7 +4,8 @@
   systemd.sleep.extraConfig = ''
     AllowSuspend=yes
     AllowHibernate=yes
-    HibernateOnACPower=yes
+    AllowHybridSleep=no
+    AllowSuspendThenHibernate=no
   '';
 
   services.logind = {
@@ -19,7 +20,7 @@
   # Enable hibernate
   systemd.targets = {
     sleep.enable = true;
-    suspend.enable = false;
+    suspend.enable = true;
     hibernate.enable = true;
   };
 
