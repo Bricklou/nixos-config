@@ -30,6 +30,9 @@
       map mylib.relativeToRoot [
         # common
         "home/linux/gui.nix"
+
+        # host specific module
+        "hosts/${name}/home.nix"
       ]
       ++ [
         {catppuccin.accent = "blue";}
