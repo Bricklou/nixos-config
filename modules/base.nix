@@ -2,7 +2,10 @@
   pkgs,
   myvars,
   ...
-}: {
+} @ args: {
+  # configure nix overlays
+  nixpkgs.overlays = import ../overlays args;
+
   # auto upgrade nix to the version
   # https://github.com/NixOS/nixpkgs/blobl/nixos/pkgs/tools/package-management/nix/default.nix#L24
   nix.package = pkgs.nixVersions.latest;
