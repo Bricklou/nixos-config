@@ -1,6 +1,6 @@
 {
   pkgs,
-  pkgs-legacy24_11,
+  pkgs-stable,
   lib,
   ...
 }: {
@@ -29,7 +29,7 @@
       firefox
       epiphany
     ])
-    ++ (with pkgs-legacy24_11; [
+    ++ (with pkgs-stable; [
       (microsoft-edge.override {
         # convert array into string for command lines
         commandLineArgs =
