@@ -35,16 +35,13 @@
         commandLineArgs =
           lib.concatStringsSep " "
           [
-            "--ozone-platform-hint=auto"
             "--ignore-gpu-blocklist"
             "--enable-zero-copy"
-            "--enable-wayland-ime"
             "--gtk-version=3"
             "--use-gl=angle"
             "--use-angle=gl"
             "--enable-features=UseMultiPlaneFormatForHardwareVideo,VaapiVideoDecodeLinuxGL,VaapiVideoEncodeLinuxGL"
             "--enable-features=AcceleratedVideoDecoder,AcceleratedVideoEncoder"
-            # "--enable-features=AcceleratedVideoEncoder,AcceleratedVideoDecoder,PlatformHEVCDecoderSupport"
             "--ozone-platform=wayland"
           ];
       })
