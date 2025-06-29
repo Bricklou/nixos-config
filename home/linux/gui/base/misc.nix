@@ -10,7 +10,7 @@
 
       # instant messages
       vesktop
-      discord
+      glib # required to have vesktop badge count working
 
       # remote desktop (rdp connect)
       remmina
