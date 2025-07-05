@@ -71,6 +71,7 @@
       rust-analyzer
       cargo # rust package manager
       cargo-watch
+      cargo-workspaces
       rustfmt
       clippy # rust linter
 

@@ -17,7 +17,7 @@
   environment.systemPackages = with pkgs; [
     # core tools
     fastfetch
-    neovim #Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     go-task
     direnv
     fish # fish shell
@@ -64,10 +64,22 @@
 
   nix.settings = {
     # enable flakes globally
-    experimental-features = ["nix-command" "flakes"];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
 
-    substituters = ["https://devenv.cachix.org"];
-    trusted-public-keys = ["devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="];
-    trusted-users = ["root" "louis"];
+    substituters = [
+      "https://devenv.cachix.org"
+      "https://nix-community.cachix.org"
+    ];
+    trusted-public-keys = [
+      "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
+    trusted-users = [
+      "root"
+      "louis"
+    ];
   };
 }

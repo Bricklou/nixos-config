@@ -18,9 +18,13 @@
 
     buildPhase = ''
       # First create a copy of the source directory
-      ls -l ${catppuccin.packages.${pkgs.stdenv.hostPlatform.system}.kvantum.src}/themes/catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}
+      ls -l ${
+        catppuccin.packages.${pkgs.stdenv.hostPlatform.system}.kvantum.src
+      }/themes/catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}
       mkdir -p "$out/share/Kvantum/catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}"
-      cp -r ${catppuccin.packages.${pkgs.stdenv.hostPlatform.system}.kvantum.src}/themes/catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}/* "$out/share/Kvantum/catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}/"
+      cp -r ${
+        catppuccin.packages.${pkgs.stdenv.hostPlatform.system}.kvantum.src
+      }/themes/catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}/* "$out/share/Kvantum/catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}/"
 
       # Set the file path variable
       configPath="$out/share/Kvantum/catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}/catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}.kvconfig"
@@ -65,7 +69,9 @@ in {
     kvantum.enable = true;
     kitty.enable = true;
     gtk.enable = true;
-    vscode.enable = false;
+    vscode = {
+      profiles.default.enable = false;
+    };
     mako.enable = false;
   };
 
