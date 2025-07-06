@@ -4,10 +4,10 @@
   qt = {
     enable = true;
     platformTheme = {
-      name = "kvantum";
+      name = "Breeze";
     };
     style = {
-      name = "kvantum";
+      name = "Breeze";
     };
   };
 }
