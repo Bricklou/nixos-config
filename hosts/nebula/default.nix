@@ -1,7 +1,7 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
-{...}: let
+{pkgs, ...}: let
   hostName = "nebula"; # Define your hostname
 in {
   imports = [
@@ -18,7 +18,10 @@ in {
   networking = {
     inherit hostName;
 
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      plugins = with pkgs; [networkmanager-openvpn];
+    };
   };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
