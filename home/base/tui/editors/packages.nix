@@ -70,7 +70,7 @@
       rustc
       rust-analyzer
       cargo # rust package manager
-      cargo-watch
+      watchexec # run commands when files change
       cargo-workspaces
       rustfmt
       clippy # rust linter
