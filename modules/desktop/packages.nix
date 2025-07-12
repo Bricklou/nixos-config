@@ -29,7 +29,7 @@
       firefox
       epiphany
     ])
-    ++ (with pkgs; [
+    ++ (with pkgs-stable; [
       (microsoft-edge.override {
         # convert array into string for command lines
         commandLineArgs = lib.concatStringsSep " " [
