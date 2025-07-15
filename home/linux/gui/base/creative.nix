@@ -1,5 +1,5 @@
-{pkgs, ...}: {
-  home.packages = with pkgs; [
+{pkgs-stable, ...}: {
+  home.packages = with pkgs-stable; [
     # creative
     gimp # image editing
     inkscape # vector graphics
@@ -9,7 +9,7 @@
     # live streaming
     obs-studio = {
       enable = true;
-      plugins = with pkgs.obs-studio-plugins; [
+      plugins = with pkgs-stable.obs-studio-plugins; [
         # screen capture
         obs-vaapi
         obs-vkcapture

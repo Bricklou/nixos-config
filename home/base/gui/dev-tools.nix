@@ -1,8 +1,12 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  pkgs-stable,
+  ...
+}: {
   home.packages = with pkgs; [
     # IDEs
     # jetbrains.pycharm-community-bin
-    jetbrains.idea-ultimate
+    pkgs-stable.jetbrains.idea-ultimate
     vscode
     vscode-runner
 
