@@ -28,7 +28,6 @@ in {
     fzf.enable = true;
     k9s.enable = true;
     kitty.enable = true;
-    gtk.enable = true;
     vesktop.enable = true;
     vscode = {
       profiles.default.enable = false;
