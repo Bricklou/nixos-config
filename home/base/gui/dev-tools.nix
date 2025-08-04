@@ -7,6 +7,7 @@
     # IDEs
     # jetbrains.pycharm-community-bin
     pkgs-stable.jetbrains.idea-ultimate
+    pkgs-stable.jetbrains.pycharm-professional
     vscode
     vscode-runner
 
