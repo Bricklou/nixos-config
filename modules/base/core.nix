@@ -25,4 +25,11 @@
     };
     upower.enable = true;
   };
+  powerManagement.enable = true;
+  powerManagement.powertop.enable = true;
+
+  boot.kernelModules = [
+    "cpufreq_ondemand"
+    "cpufreq_conservative"
+  ];
 }
