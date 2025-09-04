@@ -9,12 +9,14 @@
   '';
 
   services.logind = {
-    lidSwitch = "hibernate";
-    lidSwitchDocked = "hibernate";
-    lidSwitchExternalPower = "hibernate";
+    settings.Login = {
+      HandleLidSwitch = "hibernate";
+      HandleLidSwitchDocked = "hibernate";
+      HandleLidSwitchExternalPower = "hibernate";
 
-    powerKey = "hibernate";
-    powerKeyLongPress = "poweroff";
+      HandlePowerKey = "hibernate";
+      HandlePowerKeyLongPress = "poweroff";
+    };
   };
 
   # Enable hibernate
