@@ -20,13 +20,24 @@
   # Enable binfmt emulation for aarch64-linux
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
 
+  # Ensure IPv6 forwarding is enabled
+  boot.kernel.sysctl = {
+    "net.ipv6.conf.all.forwarding" = 1;
+    "net.ipv6.conf.default.forwarding" = 1;
+  };
+
   virtualisation = {
     docker = {
       enable = true;
       daemon.settings = {
         # enable pulling using containerd, which supports restarting from a partial pull
         # https://docs.docker.com/storage/containerd/
-        "features" = {"containerd-snapshotter" = true;};
+        "features" = {
+          "containerd-snapshotter" = true;
+        };
+        ipv6 = true;
+        fixed-cidr-v6 = "fd00::/64";
+        ip6tables = true;
       };
 
       # start dockerd on boot.
