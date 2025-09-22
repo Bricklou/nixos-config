@@ -151,6 +151,16 @@ return {
           },
         },
       },
+
+      nil_ls = {
+        settings = {
+          ["nil"] = {
+            formatting {
+              command = { "alejandra" },
+            },
+          },
+        },
+      },
     },
     capabilities = {
       textDocument = {
