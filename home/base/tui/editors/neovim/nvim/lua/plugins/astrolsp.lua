@@ -155,7 +155,7 @@ return {
       nil_ls = {
         settings = {
           ["nil"] = {
-            formatting {
+            formatting = {
               command = { "alejandra" },
             },
           },
