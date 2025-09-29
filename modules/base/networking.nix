@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   # Network discovery, mDNS
   # With this enabled, you can access your machine at <hostname>.local
   # it's more convenient than using the IP address
@@ -26,6 +26,13 @@
     "84.54.11.100"
     "84.54.11.200"
   ];
+
+  networking.networkmanager = {
+    dns = "systemd-resolved";
+    plugins = with pkgs; [
+      networkmanager-openvpn
+    ];
+  };
 
   services.resolved = {
     enable = true;
