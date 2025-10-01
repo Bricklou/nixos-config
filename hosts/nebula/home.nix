@@ -7,4 +7,10 @@ _: {
       }
     ];
   };
+
+  modules.dev-tools = {
+    enable = true;
+
+    http-client = true;
+  };
 }
