@@ -3,22 +3,22 @@
     "/" = {
       device = "/dev/disk/by-uuid/664254ac-f7d4-49e4-a367-9b3498682562";
       fsType = "btrfs";
-      options = ["subvol=root" "compress=zstd" "noatime"];
+      options = ["subvol=root" "compress=zstd" "noatime" "ssd"];
     };
     "/nix" = {
       device = "/dev/disk/by-uuid/664254ac-f7d4-49e4-a367-9b3498682562";
       fsType = "btrfs";
-      options = ["subvol=nix" "compress=zstd" "noatime"];
+      options = ["subvol=nix" "compress=zstd" "noatime" "ssd"];
     };
     "/home" = {
       device = "/dev/disk/by-uuid/664254ac-f7d4-49e4-a367-9b3498682562";
       fsType = "btrfs";
-      options = ["subvol=home" "compress=zstd" "noatime"];
+      options = ["subvol=home" "compress=zstd" "noatime" "ssd"];
     };
     "/mnt/shared" = {
       device = "/dev/disk/by-uuid/664254ac-f7d4-49e4-a367-9b3498682562";
       fsType = "btrfs";
-      options = ["subvol=shared" "compress=zstd" "noatime"];
+      options = ["subvol=shared" "compress=zstd" "noatime" "ssd"];
     };
     "/boot" = {
       device = "/dev/disk/by-uuid/E953-7440";
@@ -76,19 +76,19 @@
   #               # Root volume containing system files
   #               "/root" = {
   #                 mountpoint = "/";
-  #                 mountOptions = ["subvol=root" "compress=zstd" "noatime"];
+  #                 mountOptions = ["subvol=root" "compress=zstd" "noatime" "ssd"];
   #               };
   #               # Subvolume name is the same as mountpoint
   #               # Nix volume containing Nix store
   #               # Parent is not mounted so the mountpoint must be set
   #               "/nix" = {
-  #                 mountOptions = ["subvol=nix" "compress=zstd" "noatime"];
+  #                 mountOptions = ["subvol=nix" "compress=zstd" "noatime" "ssd"];
   #                 mountpoint = "/nix";
   #               };
   #               # Subvolume name is the same as the mountpoint
   #               # Home volume containing user files
   #               "/home" = {
-  #                 mountOptions = ["subvol=home" "compress=zstd" "noatime"];
+  #                 mountOptions = ["subvol=home" "compress=zstd" "noatime" "ssd"];
   #                 mountpoint = "/home";
   #               };
   #
