@@ -8,6 +8,7 @@
 
   environment.systemPackages = with pkgs-stable; [
     wl-clipboard
+    rustdesk
 
     (pkgs.chromium.override {
       commandLineArgs = [
