@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  pkgs-stable,
+  ...
+}: {
   home.packages = with pkgs; (
     # -*- Data & Configuration Languages -*-#
     [
@@ -11,8 +15,8 @@
       alejandra # Nix Code Formatter
 
       #-- json like
-      jsonnet
-      jsonnet-language-server
+      pkgs-stable.jsonnet
+      pkgs-stable.jsonnet-language-server
       taplo # TOML language server / formatter / validator
       nodePackages.yaml-language-server
       actionlint # GitHub Actions linter

@@ -54,8 +54,6 @@
         # virtiofsd
         virtiofsd
       ];
-      qemu.ovmf.enable = true;
-      qemu.ovmf.packages = [pkgs.OVMFFull.fd];
       extraConfig = ''
         uri_default = "qemu:///system"
       '';

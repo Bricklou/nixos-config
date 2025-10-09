@@ -1,10 +1,10 @@
-{pkgs, ...}: {
+{pkgs-stable, ...}: {
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
   };
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs-stable; [
     # General graphics packages
     libva-utils
     libva
@@ -13,7 +13,6 @@
     libvdpau-va-gl
 
     # AMD Vulkan driver (RADV is part of mesa)
-    amdvlk
     vulkan-tools
 
     egl-wayland
