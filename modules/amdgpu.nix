@@ -6,8 +6,11 @@
 
   environment.systemPackages = with pkgs-stable; [
     # General graphics packages
-    libva-utils
     libva
+    libva-utils
+    mesa
+    vulkan-loader
+    vulkan-tools
     libvdpau
     vaapiVdpau
     libvdpau-va-gl
