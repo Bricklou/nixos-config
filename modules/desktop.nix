@@ -32,6 +32,11 @@
       oxygen
     ];
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+    security.pam.services = {
+      kde.kwallet.enable = true;
+      sddm.kwallet.enable = true;
+    };
   };
 
   # Desktop options
