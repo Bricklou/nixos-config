@@ -4,4 +4,11 @@
     commit.gpgSign = true;
     tag.gpgSign = true;
   };
+
+  modules.dev-tools = {
+    enable = true;
+    vscode = true;
+
+    http-client = true;
+  };
 }
