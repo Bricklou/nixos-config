@@ -8,10 +8,8 @@
     # General graphics packages
     libva
     libva-utils
-    mesa
-    vulkan-loader
-    vulkan-tools
     libvdpau
+    mesa
     vaapiVdpau
     libvdpau-va-gl
 
@@ -19,6 +17,7 @@
     vulkan-tools
 
     egl-wayland
+    kdePackages.qtwayland
   ];
 
   boot.kernelModules = ["amdgpu"];

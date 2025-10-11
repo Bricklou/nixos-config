@@ -20,11 +20,6 @@
         # To use chrome, we need to allow the installation of non-free software
         config.allowUnfree = true;
       };
-      pkgs-legacy24_11 = import inputs.nixpkgs-legacy24_11 {
-        inherit system;
-        # To use chrome, we need to allow the installation of non-free software
-        config.allowUnfree = true;
-      };
     };
 
   #This is the args for all the haumea modules in this folder.

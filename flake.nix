@@ -36,8 +36,6 @@
 
     catppuccin.url = "github:catppuccin/nix";
 
-    plasma-manager.url = "github:nix-community/plasma-manager";
-
     winapps = {
       url = "github:winapps-org/winapps";
       inputs.nixpkgs.follows = "nixpkgs";
