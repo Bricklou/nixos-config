@@ -17,39 +17,44 @@
     github-cli
   ];
 
-  programs.git = {
-    enable = true;
-    lfs.enable = true;
+  programs = {
+    git = {
+      enable = true;
+      lfs.enable = true;
 
-    userName = myvars.userFullname;
-    inherit (myvars) userEmail;
-
-    extraConfig = {
-      init.defaultBranch = "main";
-      trim.bases = "develop,master,main"; # for git-trim
-      push.autoSetupRemote = true;
-      pull.rebase = true;
-
-      # replace https with ssh
-      url = {
-        "ssh://git@github.com/bricklou" = {
-          insteadOf = "https://github.com/bricklou";
+      settings = {
+        user = {
+          email = myvars.userEmail;
+          name = myvars.userFullname;
         };
-      };
 
-      aliases = {
-        # git commit
-        cm = "commit --message";
-        cam = "commit --amend --message";
-        cane = "commit --amend --no-edit";
-      };
+        init.defaultBranch = "main";
+        trim.bases = "develop,master,main"; # for git-trim
+        push.autoSetupRemote = true;
+        pull.rebase = true;
 
-      diff.sopsdiffer.textconv = "sops decrypt";
+        # replace https with ssh
+        url = {
+          "ssh://git@github.com/bricklou" = {
+            insteadOf = "https://github.com/bricklou";
+          };
+        };
+
+        aliases = {
+          # git commit
+          cm = "commit --message";
+          cam = "commit --amend --message";
+          cane = "commit --amend --no-edit";
+        };
+
+        diff.sopsdiffer.textconv = "sops decrypt";
+      };
     };
 
     # A syntax-highlitghing pager in Rust (2019 ~ Now)
     delta = {
       enable = true;
+      enableGitIntegration = true;
       options = {
         diff-so-fancy = true;
         line-numbers = true;
