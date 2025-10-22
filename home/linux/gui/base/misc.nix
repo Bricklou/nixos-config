@@ -25,6 +25,8 @@
       deskflow
       rustdesk-flutter
 
+      rquickshare
+
       # knowledge base
       obsidian
     ]
