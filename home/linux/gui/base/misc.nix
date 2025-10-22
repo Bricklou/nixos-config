@@ -23,8 +23,9 @@
       kdePackages.kdeconnect-kde
 
       deskflow
+      rustdesk-flutter
 
-      # knownledge base
+      # knowledge base
       obsidian
     ]
     ++ [
