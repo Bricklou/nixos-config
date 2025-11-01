@@ -10,8 +10,7 @@
       material-design-icons
 
       noto-fonts
-      noto-fonts-emoji
-      noto-fonts-extra
+      noto-fonts-color-emoji
 
       source-sans
       source-sans-pro

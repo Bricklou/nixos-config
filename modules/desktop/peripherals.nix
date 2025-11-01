@@ -48,9 +48,5 @@
   services = {
     printing.enable = true; # Enable CUPS to print documents
     geoclue2.enable = true; # Enable geolocation services.
-
-    udev.packages = with pkgs; [
-      android-udev-rules # required by adb
-    ];
   };
 }
