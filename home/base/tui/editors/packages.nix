@@ -98,6 +98,7 @@
       #-- lua
       stylua
       lua-language-server
+      lua
       luarocks
 
       #-- bash
