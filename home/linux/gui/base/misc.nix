@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-stable,
   lib,
   kwin-effects-forceblur,
   ...
@@ -23,12 +24,17 @@
       kdePackages.kdeconnect-kde
 
       deskflow
-      rustdesk-flutter
+
+      pkgs-stable.rustdesk-flutter
 
       rquickshare
 
       # knowledge base
       obsidian
+
+      # password manager
+      bitwarden-desktop
+      bitwarden-cli
     ]
     ++ [
       # kwin effects force blur
