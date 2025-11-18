@@ -10,6 +10,7 @@ _: {
 
   modules.dev-tools = {
     enable = true;
+    logs-viewer = true;
 
     http-client = true;
   };

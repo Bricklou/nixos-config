@@ -14,6 +14,9 @@
         (lib.optionals config.modules.dev-tools.pycharm [pkgs-stable.jetbrains.pycharm-professional])
         # HTTP Client
         (lib.optionals config.modules.dev-tools.http-client [pkgs.hoppscotch pkgs.insomnia])
+
+        # Log client
+        (lib.optionals config.modules.dev-tools.logs-viewer [pkgs.glogg])
       ]
     );
 
@@ -32,5 +35,7 @@
     pycharm = lib.mkEnableOption "install PyCharm Professional Edition";
 
     http-client = lib.mkEnableOption "install HTTP client tools";
+
+    logs-viewer = lib.mkEnableOption "install log viewer tools";
   };
 }
