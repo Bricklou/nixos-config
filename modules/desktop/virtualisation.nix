@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  pkgs-stable,
+  ...
+}: {
   ##################################################
   #
   #	Virtualisation - Libvirt (QEMU/KVM) / Docker
