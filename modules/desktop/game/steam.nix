@@ -1,6 +1,6 @@
 # https://github.com/fufexan/dotfiles/blob/483680e/system/programs/steam.nix
 {
-  pkgs,
+  pkgs-stable,
   config,
   lib,
   ...
@@ -19,9 +19,9 @@
       gamescopeSession.enable = true;
 
       # fix gamescope inside steam
-      package = pkgs.steam.override {
-        extraPkgs = pkgs:
-          with pkgs; [
+      package = pkgs-stable.steam.override {
+        extraPkgs = pkgs-stable:
+          with pkgs-stable; [
             xorg.libXcursor
             xorg.libXi
             xorg.libXinerama
