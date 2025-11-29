@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   # ==================== Audio (PipeWire) ====================
 
   # List packages installed in system profile. To search, run:
@@ -49,4 +53,13 @@
     printing.enable = true; # Enable CUPS to print documents
     geoclue2.enable = true; # Enable geolocation services.
   };
+
+  # Virtual camera
+  boot.extraModulePackages = with config.boot.kernelPackages; [
+    v4l2loopback
+  ];
+  boot.kernelModules = ["v4l2loopback"];
+  security.polkit.enable = true;
+
+  programs.gphoto2.enable = true; # for cameras
 }
