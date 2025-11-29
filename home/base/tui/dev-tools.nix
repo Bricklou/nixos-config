@@ -13,6 +13,9 @@
   home.packages = with pkgs; [
     colmena # nixos's remote deployment tool
 
+    # package manager
+    uv
+
     # db related
     pgcli
     sqlite
