@@ -4,13 +4,11 @@
   ...
 }: {
   environment.systemPackages = with pkgs-stable; [
-    via
     vial
     qmk
     qmk-udev-rules
   ];
   services.udev.packages = with pkgs-stable; [
-    via
     vial
   ];
 
