@@ -10,8 +10,8 @@
     libva-utils
     libvdpau
     mesa
-    vaapiVdpau
     libvdpau-va-gl
+    libva-vdpau-driver
 
     # AMD Vulkan driver (RADV is part of mesa)
     vulkan-tools
