@@ -8,6 +8,7 @@
   modules.dev-tools = {
     enable = true;
     vscode = true;
+    rider = true;
 
     http-client = true;
   };

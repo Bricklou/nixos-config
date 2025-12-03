@@ -12,6 +12,7 @@
         (lib.optionals config.modules.dev-tools.vscode [pkgs.vscode pkgs.vscode-runner])
         (lib.optionals config.modules.dev-tools.idea [pkgs-stable.jetbrains.idea-ultimate])
         (lib.optionals config.modules.dev-tools.pycharm [pkgs-stable.jetbrains.pycharm-professional])
+        (lib.optionals config.modules.dev-tools.rider [pkgs-stable.jetbrains.rider])
         # HTTP Client
         (lib.optionals config.modules.dev-tools.http-client [pkgs.hoppscotch pkgs.insomnia])
 
@@ -33,6 +34,7 @@
     vscode = lib.mkEnableOption "install Visual Studio Code";
     idea = lib.mkEnableOption "install IntelliJ IDEA Ultimate Edition";
     pycharm = lib.mkEnableOption "install PyCharm Professional Edition";
+    rider = lib.mkEnableOption "install JetBrains Rider IDE";
 
     http-client = lib.mkEnableOption "install HTTP client tools";
 
