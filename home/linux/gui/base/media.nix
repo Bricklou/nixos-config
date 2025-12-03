@@ -11,7 +11,7 @@
     libva-utils
     vdpauinfo
     vulkan-tools
-    glxinfo
+    mesa-demos
 
     # media players
     vlc
