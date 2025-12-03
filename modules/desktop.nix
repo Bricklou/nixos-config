@@ -37,6 +37,12 @@
       kde.kwallet.enable = true;
       sddm.kwallet.enable = true;
     };
+
+    qt = {
+      enable = true;
+      platformTheme = "kde";
+      style = "breeze";
+    };
   };
 
   # Desktop options

@@ -3,11 +3,7 @@
 
   qt = {
     enable = true;
-    platformTheme = {
-      name = "Breeze";
-    };
-    style = {
-      name = "Breeze";
-    };
+    platformTheme.name = "kde";
+    style.name = "breeze";
   };
 }
