@@ -29,6 +29,12 @@
     devenv
     inotify-info
     dbeaver-bin
+
+    (with dotnetCorePackages;
+      combinePackages [
+        sdk_10_0
+        runtime_10_0
+      ])
   ];
 
   xdg.configFile."fish/conf.d/fnm.fish".text = ''
