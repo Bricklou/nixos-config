@@ -26,10 +26,6 @@
 
       deskflow
 
-      pkgs-stable.rustdesk-flutter
-
-      rquickshare
-
       # knowledge base
       obsidian
 
@@ -37,6 +33,10 @@
       bitwarden-desktop
       bitwarden-cli
     ]
+    ++ (with pkgs-stable; [
+      rustdesk-flutter
+      rquickshare
+    ])
     ++ [
       # kwin effects force blur
       kwin-effects-forceblur.packages.${pkgs.stdenv.hostPlatform.system}.default
