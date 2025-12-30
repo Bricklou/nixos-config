@@ -9,7 +9,7 @@
     home.packages = lib.mkIf config.modules.dev-tools.enable (
       lib.flatten [
         # IDEs
-        (lib.optionals config.modules.dev-tools.vscode [pkgs.vscode pkgs.vscode-runner])
+        (lib.optionals config.modules.dev-tools.vscode [pkgs.vscode-fhs pkgs.vscode-runner])
         (lib.optionals config.modules.dev-tools.idea [pkgs-stable.jetbrains.idea-ultimate])
         (lib.optionals config.modules.dev-tools.pycharm [pkgs-stable.jetbrains.pycharm-professional])
         (lib.optionals config.modules.dev-tools.rider [pkgs-stable.jetbrains.rider])
