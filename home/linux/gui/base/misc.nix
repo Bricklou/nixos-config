@@ -32,6 +32,8 @@
       # password manager
       bitwarden-desktop
       bitwarden-cli
+
+      rpi-imager
     ]
     ++ (with pkgs-stable; [
       rustdesk-flutter
