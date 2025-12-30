@@ -16,7 +16,7 @@
     # xdg-open is used by almost all programs to open an unknown file/uri
     # alacritty as an example, it use xdg-open as default, but you can also customize this behaviour
     # and vscode has open like `External Uri Openers`
-    xdgOpenUsePortal = false;
+    xdgOpenUsePortal = true;
     extraPortals = with pkgs; [
       kdePackages.xdg-desktop-portal-kde
     ];
