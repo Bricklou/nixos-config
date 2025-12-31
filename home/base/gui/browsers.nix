@@ -5,5 +5,8 @@
     chromium
     epiphany
     microsoft-edge
+
+    # Mail clients
+    thunderbird
   ];
 }
