@@ -10,7 +10,7 @@
       # GUI apps
 
       # instant messages
-      vesktop
+      pkgs-stable.vesktop
       discord
       glib # required to have vesktop badge count working
 

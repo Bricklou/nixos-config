@@ -10,6 +10,8 @@ _: {
 
   modules.dev-tools = {
     enable = true;
+    vscode = true;
+    idea = true;
     logs-viewer = true;
 
     http-client = true;
