@@ -10,8 +10,8 @@
       lib.flatten [
         # IDEs
         (lib.optionals config.modules.dev-tools.vscode [pkgs.vscode-fhs pkgs.vscode-runner])
-        (lib.optionals config.modules.dev-tools.idea [pkgs-stable.jetbrains.idea-ultimate])
-        (lib.optionals config.modules.dev-tools.pycharm [pkgs-stable.jetbrains.pycharm-professional])
+        (lib.optionals config.modules.dev-tools.idea [pkgs-stable.jetbrains.idea-oss])
+        (lib.optionals config.modules.dev-tools.pycharm [pkgs-stable.jetbrains.pycharm-community])
         (lib.optionals config.modules.dev-tools.rider [pkgs-stable.jetbrains.rider])
         # HTTP Client
         (lib.optionals config.modules.dev-tools.http-client [pkgs.hoppscotch pkgs.insomnia])
@@ -32,8 +32,8 @@
     enable = lib.mkEnableOption "enable development tools";
 
     vscode = lib.mkEnableOption "install Visual Studio Code";
-    idea = lib.mkEnableOption "install IntelliJ IDEA Ultimate Edition";
-    pycharm = lib.mkEnableOption "install PyCharm Professional Edition";
+    idea = lib.mkEnableOption "install IntelliJ IDEA Community Edition";
+    pycharm = lib.mkEnableOption "install PyCharm Community Edition";
     rider = lib.mkEnableOption "install JetBrains Rider IDE";
 
     http-client = lib.mkEnableOption "install HTTP client tools";
