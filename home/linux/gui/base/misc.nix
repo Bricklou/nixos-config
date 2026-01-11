@@ -38,6 +38,10 @@
     ++ (with pkgs-stable; [
       rustdesk-flutter
       rquickshare
+
+      # backup tool
+      borgbackup
+      vorta
     ])
     ++ [
       # kwin effects force blur
