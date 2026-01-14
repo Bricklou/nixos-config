@@ -43,6 +43,10 @@
   xdg.configFile."fish/conf.d/fnm.fish".text = ''
     fnm env --use-on-cd --corepack-enabled --resolve-engines --shell fish | source
   '';
+  xdg.configFile."fish/conf.d/pnpm.fish".text = ''
+    set -Ux PNPM_HOME $HOME/.local/share/pnpm
+    set -Ua fish_user_paths $PNPM_HOME
+  '';
 
   programs = {
     direnv = {
