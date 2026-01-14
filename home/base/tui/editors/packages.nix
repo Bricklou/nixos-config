@@ -30,6 +30,10 @@
       glow # markdown previewer
       pandoc # document converter
       hugo # static site generator
+      #-- asciidoc
+      asciidoctor-with-extensions # asciidoc processor
+      #-- mermaid
+      mermaid-cli # mermaid diagram generator
 
       #-- sql
       sqlfluff
