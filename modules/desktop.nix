@@ -31,6 +31,11 @@
       elisa
       oxygen
     ];
+    environment.systemPackages = with pkgs; [
+      kdePackages.plasma-integration
+      kdePackages.plasma-browser-integration
+      kdePackages.kaccounts-integration
+    ];
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
     security.pam.services = {
