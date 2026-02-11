@@ -47,6 +47,8 @@
       # start dockerd on boot.
       # This is required for containers which are created with the `--restart=always` flag to work.
       enableOnBoot = true;
+
+      extraOptions = "--iptables=false";
     };
 
     libvirtd = {
@@ -55,7 +57,6 @@
       # To fix these, manually change ownership of affected files in /var/lib/libvirt/qemu to qemu-libvirtd
       qemu.runAsRoot = true;
       qemu.vhostUserPackages = with pkgs; [
-        # virtiofsd
         virtiofsd
       ];
       extraConfig = ''
