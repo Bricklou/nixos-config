@@ -15,6 +15,9 @@
     };
   };
 
+  # 1. Enable Routing at the Kernel level
+  boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
+
   networking = {
     # 1. Enable modern nftables instead of legacy iptables
     nftables.enable = true;
@@ -46,10 +49,21 @@
       # Allow Forwarding (Required for NAT/Internet in VMs)
       # This enables the kernel to pass traffic from virbr0/docker0 to your main NIC.
       extraForwardRules = ''
-        iifname "docker0" accept
-        iifname "virbr0" accept
+        iifname { "docker0", "virbr0" } accept comment "Allow outgoing from containers/VMs"
+        oifname { "docker0", "virbr0" } ct state established,related accept comment "Allow return traffic to containers"
       '';
     };
+  };
+
+  networking.nftables.tables.postrouting = {
+    family = "ip";
+    content = ''
+      chain srcnat {
+        type nat hook postrouting priority 100; policy accept;
+        iifname "docker0" masquerade
+        iifname "virbr0" masquerade
+      }
+    '';
   };
 
   networking.nameservers = [
