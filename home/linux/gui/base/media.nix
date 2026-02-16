@@ -3,6 +3,7 @@
   home.packages = with pkgs-stable; [
     # audio control
     pavucontrol
+    paprefs
     playerctl
     kdePackages.phonon
     rnnoise-plugin
