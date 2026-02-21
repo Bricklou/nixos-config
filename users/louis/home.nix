@@ -15,6 +15,6 @@
   programs.git = {
     inherit (myvars) userEmail;
     userName = myvars.userFullname;
-    signing.key = "354CB739A8F0FAB1";
+    signing.key = "25209AE7B044285E";
   };
 }

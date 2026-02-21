@@ -51,4 +51,9 @@
 
   # Enable SmartCard udev rules
   hardware.gpgSmartcards.enable = true;
+
+  # Configuration spécifique pour scdaemon
+  environment.etc."gnupg/scdaemon.conf".text = ''
+    disable-ccid
+  '';
 }
