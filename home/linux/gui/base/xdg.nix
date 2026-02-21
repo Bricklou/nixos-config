@@ -32,7 +32,7 @@
       enable = true;
       # let `xdg-open` to open the url with the correct application
       defaultApplications = let
-        browser = ["zen-twilight.desktop"];
+        browser = ["zen-beta.desktop"];
         editor = ["nvim.desktop" "code.desktop" "kate.desktop"];
         oketa = ["oketa.desktop"];
       in {
