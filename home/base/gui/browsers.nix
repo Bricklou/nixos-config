@@ -38,6 +38,8 @@ in {
     programs.zen-browser = {
       enable = true;
       nativeMessagingHosts = [pkgs.firefoxpwa pkgs.kdePackages.plasma-browser-integration];
+
+      suppressXdgMigrationWarning = true;
     };
   };
 }
