@@ -17,7 +17,12 @@ in {
     enable = true;
     package = pkgs.fish;
     inherit shellAliases;
+    # Configure SSH to use GPG Agent
     shellInit = ''
+      set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+      gpg-connect-agent updatestartuptty /bye > /dev/null
+
+
       fish_add_path ${localBin} ${goBin} ${rustBin}
     '';
   };

@@ -8,10 +8,16 @@
 
   # Enable YubiKey packages
   # https://joinemm.dev/blog/yubikey-nixos-guide
+  # https://joshbuker.com/blog/how-to-use-a-gpg-smartcard-for-git-and-ssh/
+
   services = {
     pcscd.enable = true;
     udev.packages = [pkgs.yubikey-personalization];
   };
+
+  environment.systemPackages = with pkgs; [
+    yubioath-flutter
+  ];
 
   security.pam = {
     u2f = {
@@ -36,19 +42,13 @@
   # gpg agent with pinentry
   programs.gnupg.agent = {
     enable = true;
-    pinentryPackage = pkgs.pinentry-qt;
-    enableSSHSupport = false;
+    pinentryPackage = pkgs.pinentry-curses;
+    enableSSHSupport = true;
     settings.default-cache-ttl = 4 * 60 * 60; # 4 hours
     enableExtraSocket = true;
   };
+  programs.ssh.startAgent = false;
 
-  # Locking the screen when a Yubikey is unplugged
-  services.udev.extraRules = ''
-    ACTION=="remove",\
-     ENV{ID_BUS}=="usb",\
-     ENV{ID_MODEL_ID}=="0407",\
-     ENV{ID_VENDOR_ID}=="1050",\
-     ENV{ID_VENDOR}=="Yubico",\
-     RUN+="${pkgs.systemd}/bin/loginctl lock-sessions"
-  '';
+  # Enable SmartCard udev rules
+  hardware.gpgSmartcards.enable = true;
 }
