@@ -37,7 +37,6 @@
     ]
     ++ (with pkgs-stable; [
       rustdesk-flutter
-      rquickshare
 
       # backup tool
       borgbackup
@@ -45,7 +44,7 @@
     ])
     ++ [
       # kwin effects force blur
-      kwin-effects-forceblur.packages.${pkgs.stdenv.hostPlatform.system}.default
+      # kwin-effects-forceblur.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 
   # allow fontconfig to discover fonts and configurations installed through home.packages
