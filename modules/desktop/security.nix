@@ -42,7 +42,7 @@
   # gpg agent with pinentry
   programs.gnupg.agent = {
     enable = true;
-    pinentryPackage = pkgs.pinentry-curses;
+    pinentryPackage = pkgs.pinentry-qt;
     enableSSHSupport = true;
     settings.default-cache-ttl = 4 * 60 * 60; # 4 hours
     enableExtraSocket = true;
