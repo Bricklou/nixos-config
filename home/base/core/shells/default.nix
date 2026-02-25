@@ -27,6 +27,11 @@ in {
     '';
   };
 
+  programs.gpg.scdaemonSettings = {
+    disable-ccid = true;
+    pcsc-shared = true;
+  };
+
   programs.bash = {
     enable = true;
     enableCompletion = true;

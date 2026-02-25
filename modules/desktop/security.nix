@@ -15,6 +15,8 @@
     udev.packages = [pkgs.yubikey-personalization];
   };
 
+  systemd.services.pcscd.wantedBy = ["multi-user.target"];
+
   environment.systemPackages = with pkgs; [
     yubioath-flutter
   ];
@@ -22,13 +24,13 @@
   security.pam = {
     u2f = {
       enable = true;
+
       settings = {
         interactive = true;
         cue = true;
 
-        origin = "pam://yubi";
         authfile = pkgs.writeText "u2f-mappings" (lib.concatStrings [
-          "louis:k1+mryOTWetSRo7erV4N3YUKAuqXEjHjatjcaDsmkChJbH+SQ+zmeb12VFfgJQRFwZQa9EsUdz/SqJsiE73xOA==,SCB/64X8rpBvfnliLWK7dRGFVYigNvJODrdx0Drg/LO4dyQsXBG6ThEI30haTs4QqGFlWrivMEETXNjhDjbAKg==,es256,+presence"
+          "louis:A2I9LzECDa+bn4uLiDDHj0vh4en6TlWEix3cJAIbzwwOjsvsfWmj0j9ho3J30zBJOuF8vPfA1KBgN4cLORMnoA==,YL3zDz+EQ3Qky6irNgxRrrTYNb6qi5s0FBbPPtSKcPezlT9z0E/SG0gkg8U+QPVXrbbSZZFHtBkevpUIPv8hjw==,es256,+presence"
         ]);
       };
     };
@@ -36,6 +38,7 @@
     services = {
       login.u2fAuth = true;
       sudo.u2fAuth = true;
+      kde.u2fAuth = true;
     };
   };
 
@@ -55,5 +58,6 @@
   # Configuration spécifique pour scdaemon
   environment.etc."gnupg/scdaemon.conf".text = ''
     disable-ccid
+    pcsc-shared
   '';
 }
