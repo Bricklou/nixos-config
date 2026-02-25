@@ -1,6 +1,10 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  pkgs-stable,
+  ...
+}: {
   home.packages = with pkgs; [
-    python313Packages.kde-material-you-colors
+    pkgs-stable.python313Packages.kde-material-you-colors
     libreoffice-qt6-fresh
     kdePackages.keditbookmarks
   ];

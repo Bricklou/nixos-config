@@ -28,7 +28,7 @@
 
         origin = "pam://yubi";
         authfile = pkgs.writeText "u2f-mappings" (lib.concatStrings [
-          ":javYbqsH1wawZ1GanIcC7lr5zPeFXYaCXUfz9VRqoCI7X47KqNrQmjW5/46TqiQxCwcXhjPBKISqGx7FWSU/0w==,sSAbdgq04dFW2oBBDPijOiK2fTVztzLw+geywVfp6JxGwt/syKlNJspF7chgF0sN9gzKkt7Rm6ozuKNUEItn6w==,es256,+p"
+          "louis:k1+mryOTWetSRo7erV4N3YUKAuqXEjHjatjcaDsmkChJbH+SQ+zmeb12VFfgJQRFwZQa9EsUdz/SqJsiE73xOA==,SCB/64X8rpBvfnliLWK7dRGFVYigNvJODrdx0Drg/LO4dyQsXBG6ThEI30haTs4QqGFlWrivMEETXNjhDjbAKg==,es256,+presence"
         ]);
       };
     };
