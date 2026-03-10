@@ -1,4 +1,4 @@
-_: {
+{pkgs, ...}: {
   programs.git = {
     includes = [
       {
@@ -7,6 +7,8 @@ _: {
       }
     ];
   };
+
+  home.packages = [pkgs.claude-code];
 
   modules.dev-tools = {
     enable = true;
