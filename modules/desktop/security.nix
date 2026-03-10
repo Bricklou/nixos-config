@@ -31,6 +31,7 @@
 
         authfile = pkgs.writeText "u2f-mappings" (lib.concatStrings [
           "louis:A2I9LzECDa+bn4uLiDDHj0vh4en6TlWEix3cJAIbzwwOjsvsfWmj0j9ho3J30zBJOuF8vPfA1KBgN4cLORMnoA==,YL3zDz+EQ3Qky6irNgxRrrTYNb6qi5s0FBbPPtSKcPezlT9z0E/SG0gkg8U+QPVXrbbSZZFHtBkevpUIPv8hjw==,es256,+presence"
+          "louis:P2AYusWF9Sp0D1QTpqIKZZa38wjJnjWq2BjI2ip/pYLOvQn8OqMlpk0pRLk/jwWBeRIkJVBrKMTzJkAHKgnOUg==,SorCGGPGCg6vo7IrkzukYdyfS1DRkORImt5E5dDJ4Qi2pcpJayWjc+eSxDXxo7CkFcM1F4azHOB0b7dEDxqiJg==,es256,+presence"
         ]);
       };
     };
