@@ -1,12 +1,12 @@
 {...}: {
   # suspend-then-hibernate
   # https://www.man7.org/linux/man-pages/man5/systemd-sleep.conf.5.html
-  systemd.sleep.extraConfig = ''
-    AllowSuspend=yes
-    AllowHibernate=yes
-    AllowHybridSleep=no
-    AllowSuspendThenHibernate=no
-  '';
+  systemd.sleep.settings.Sleep = {
+    AllowSuspend = "yes";
+    AllowHibernate = "yes";
+    AllowHybridSleep = "no";
+    AllowSuspendThenHibernate = "no";
+  };
 
   services.logind = {
     settings.Login = {
