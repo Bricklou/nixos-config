@@ -8,8 +8,6 @@
     ];
   };
 
-  home.packages = [pkgs.claude-code];
-
   modules.dev-tools = {
     enable = true;
     vscode = true;

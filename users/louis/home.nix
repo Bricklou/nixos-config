@@ -16,5 +16,6 @@
     inherit (myvars) userEmail;
     userName = myvars.userFullname;
     signing.key = "25209AE7B044285E";
+    signing.format = "opengpg";
   };
 }

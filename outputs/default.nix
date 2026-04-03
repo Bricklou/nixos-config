@@ -99,7 +99,7 @@ in {
           home-manager
           # spell-checker
           typos
-          nodePackages.prettier
+          prettier
           # encryption
           sops
         ];

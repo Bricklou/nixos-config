@@ -24,7 +24,7 @@
         {
           home.homeDirectory = "/home/${myvars.username}";
           home.username = myvars.username;
-          home.stateVersion = "24.11";
+          home.stateVersion = "26.05";
         }
       ];
   };
