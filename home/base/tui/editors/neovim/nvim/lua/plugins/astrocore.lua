@@ -10,29 +10,42 @@ return {
   opts = {
     -- Configure core features of AstroNvim
     features = {
-      large_buf = { size = 1024 * 500, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
-      autopairs = true, -- enable autopairs at start
-      cmp = true, -- enable completion at start
-      diagnostics_mode = 3, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
-      highlighturl = true, -- highlight URLs at start
-      notifications = true, -- enable notifications at start
-      signature_help = true, -- enable signature help at start
-      inlay_hints = true, -- enable inlay hints at start
+      large_buf = { size = 1024 * 500, lines = 10000 },            -- set global limits for large files for disabling features like treesitter
+      autopairs = true,                                            -- enable autopairs at start
+      cmp = true,                                                  -- enable completion at start
+      diagnostics = { virtual_text = true, virtual_lines = true }, -- diagnostic settings on startup
+      highlighturl = true,                                         -- highlight URLs at start
+      notifications = true,                                        -- enable notifications at start
+      signature_help = true,                                       -- enable signature help at start
+      inlay_hints = true,                                          -- enable inlay hints at start
     },
     -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
     diagnostics = {
       virtual_text = true,
       underline = true,
     },
+    -- passed to `vim.filetype.add`
+    filetypes = {
+      -- see `:h vim.filetype.add` for usage
+      extension = {
+      },
+      filename = {
+      },
+      pattern = {
+      },
+    },
+
     -- vim options can be configured here
     options = {
-      opt = { -- vim.opt.<key>
-        relativenumber = true, -- Show relative numberline
-        signcolumn = "auto", -- Show sign column when used only
-        spell = false, -- Spell checking
-        swapfile = false, -- Swapfile
-        smartindent = false, -- fix https://github.com/ryan4yin/nix-config/issues/4
-        title = true, -- Set the title of window to `filename [+=-] (path) - NVIM`
+      opt = {                   -- vim.opt.<key>
+        relativenumber = true,  -- Show relative numberline
+        signcolumn = "auto",    -- Show sign column when used only
+        spell = true,           -- Spell checking
+        spelllang = "en_us",    -- Set the language for spell checking
+        spelloptions = "camel", -- Enable camelCase spell checking
+        swapfile = false,       -- Swapfile
+        smartindent = false,    -- fix https://github.com/ryan4yin/nix-config/issues/4
+        title = true,           -- Set the title of window to `filename [+=-] (path) - NVIM`
         -- The percentage of 'columns' to use for the title
         -- When the title is longer, only the end of the path name is shown.
         titlelen = 20,

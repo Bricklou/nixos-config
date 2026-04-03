@@ -16,7 +16,7 @@ return {
     -- Check supported formatters and linters
     -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/formatting
     -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
-    config.sources = {
+    config.sources = require("astrocore").list_insert_unique(config.sources, {
       -- Common Code Actions
       code_actions.gitsigns,
 
@@ -46,7 +46,7 @@ return {
         extra_args = { "--dialect", "postgres" }, -- change to your dialect
       },
       require "none-ls.formatting.rustfmt",       -- Rust formatter
-    }
+    })
     return config                                 -- return final config table
   end,
 }

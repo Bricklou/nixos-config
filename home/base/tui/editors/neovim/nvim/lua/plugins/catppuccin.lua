@@ -4,7 +4,7 @@ return {
   ---@type CatppuccinOptions
   opts = {
     dim_inactive = { enabled = true, percentage = 0.25 },
-    flavour = "mocha", -- latte, frappe, macchiato, mocha
+    flavour = "mocha",             -- latte, frappe, macchiato, mocha
     transparent_background = true, -- setting the background color.
     color_overrides = {
       mocha = {

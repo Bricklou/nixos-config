@@ -1,42 +1,37 @@
 -- Customize Treesitter
+-- --------------------
+-- Treesitter customizations are handled with AstroCore
+-- as nvim-treesitter simply provides a download utility for parsers
 
 ---@type LazySpec
 return {
-  "nvim-treesitter/nvim-treesitter",
+  "AstroNvim/astrocore",
   dependencies = {
     -- NOTE: additional parser
     "monaqa/tree-sitter-mermaid",
   },
-  opts = function(_, opts)
-    opts.incremental_selection = {
-      enable = true,
-      keymaps = {
-        init_selection = "<C-space>",    -- Ctrl + Space
-        node_incremental = "<C-space>",
-        scope_incremental = "<A-space>", -- Alt + Space
-        node_decremental = "<bs>",       -- Backspace
-      },
+  opts = {
+    treesitter = {
+      highlight = true,    -- enable/disable treesitter based highlighting
+      indent = true,       -- enable/disable treesitter based indentation
+      auto_install = true, -- enable/disable automatic installation of detected languages
+      ensure_installed = {
+        -- please add only the tree-sitters that are not available in nixpkgs here
+        "just",
+        "kdl",
+        "csv",
+        "xml",
+
+        ---- Misc
+        "diff",
+        "git_config",
+        "git_rebase",
+        "gitignore",
+        "gitcommit",
+        "gitattributes",
+        "ssh_config",
+        -- add more arguments for adding more treesitter parsers
+      }
     }
-    opts.ignore_install = { "gotmpl", "wing" }
-
-    -- add more things to the ensure_installed table protecting against community packs modifying it
-    -- https://github.com/nvim-treesitter/nvim-treesitter/tree/master
-    opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
-      -- please add only the tree-sitters that are not available in nixpkgs here
-
-      "just",
-      "kdl",
-      "csv",
-      "xml",
-
-      ---- Misc
-      "diff",
-      "git_config",
-      "git_rebase",
-      "gitignore",
-      "gitcommit",
-      "gitattributes",
-      "ssh_config",
-    })
-  end,
+  },
 }
