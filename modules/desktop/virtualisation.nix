@@ -88,6 +88,6 @@
     qemu
 
     # WinBoat
-    pkgs-stable.winboat
+    # pkgs-stable.winboat
   ];
 }

@@ -50,6 +50,7 @@
     pinentryPackage = pkgs.pinentry-qt;
     enableSSHSupport = true;
     settings.default-cache-ttl = 4 * 60 * 60; # 4 hours
+    settings.max-cache-ttl = 1 * 60 * 60;
     enableExtraSocket = true;
   };
   programs.ssh.startAgent = false;
