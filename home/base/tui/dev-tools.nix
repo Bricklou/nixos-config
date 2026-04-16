@@ -24,7 +24,7 @@
     sshuttle
 
     # nodejs version managed
-    fnm
+    mise
 
     devenv
     inotify-info
@@ -40,8 +40,8 @@
       ])
   ];
 
-  xdg.configFile."fish/conf.d/fnm.fish".text = ''
-    fnm env --use-on-cd --corepack-enabled --resolve-engines --shell fish | source
+  xdg.configFile."fish/conf.d/mise.fish".text = ''
+    mise activate fish | source
   '';
   xdg.configFile."fish/conf.d/pnpm.fish".text = ''
     set -Ux PNPM_HOME $HOME/.local/share/pnpm
