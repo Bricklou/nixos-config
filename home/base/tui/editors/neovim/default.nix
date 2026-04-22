@@ -20,7 +20,6 @@ let
   configPath = "${config.home.homeDirectory}/nixos-config/home/base/tui/editors/neovim/nvim";
 in {
   xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink configPath;
-  xdg.configFile."nvim/init.lua".enable = false;
 
   home.shellAliases = shellAliases;
   programs.fish.shellAliases = shellAliases;
@@ -35,6 +34,7 @@ in {
       # defaultEditor = true; # set EDITOR at system-wide level
       viAlias = true;
       vimAlias = true;
+      sideloadInitLua = true;
 
       # These environment variables are needed to build and run binaries
       # with external package managers like mason.nvim.
