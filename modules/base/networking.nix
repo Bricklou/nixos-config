@@ -39,7 +39,7 @@
       # Still trust your VPN interfaces so local services (like a printer
       # or internal tool) work once the tunnel is encrypted.
       # Also trust VMs and Containers to talk to the Host and route their traffic out to the internet.
-      trustedInterfaces = ["wg0" "tun0" "docker0" "virbr0"];
+      trustedInterfaces = ["wg0" "tun0" "docker0" "virbr0" "br-+"];
 
       # Fixes for Guest Connectivity
       # Some enterprise VPNs or strict network routes break if "Reverse Path Filtering"
@@ -49,8 +49,8 @@
       # Allow Forwarding (Required for NAT/Internet in VMs)
       # This enables the kernel to pass traffic from virbr0/docker0 to your main NIC.
       extraForwardRules = ''
-        iifname { "docker0", "virbr0" } accept comment "Allow outgoing from containers/VMs"
-        oifname { "docker0", "virbr0" } ct state established,related accept comment "Allow return traffic to containers"
+        iifname { "docker0", "virbr0", "br-*" } accept comment "Allow outgoing from containers/VMs"
+        oifname { "docker0", "virbr0", "br-*" } ct state established,related accept comment "Allow return traffic to containers"
       '';
     };
   };
@@ -62,6 +62,7 @@
         type nat hook postrouting priority 100; policy accept;
         iifname "docker0" masquerade
         iifname "virbr0" masquerade
+        iifname "br-*" masquerade
       }
     '';
   };
