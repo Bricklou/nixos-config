@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  pkgs-stable,
+  ...
+}: {
   ############################################################
   #
   # Basic settings for development environment
@@ -30,7 +34,7 @@
     inotify-info
     dbeaver-bin
 
-    (with dotnetCorePackages;
+    (with pkgs-stable.dotnetCorePackages;
       combinePackages [
         sdk_10_0
         runtime_10_0
