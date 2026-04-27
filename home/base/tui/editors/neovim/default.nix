@@ -69,8 +69,6 @@ in {
       plugins = with pkgs.vimPlugins; [
         # search all the plugins using https://search.nixos.org/packages
         telescope-fzf-native-nvim
-
-        nvim-treesitter.withAllGrammars
       ];
     };
   };

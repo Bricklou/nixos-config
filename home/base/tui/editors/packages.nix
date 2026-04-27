@@ -88,8 +88,8 @@
       gomodifytags
       iferr # generate error handling code for go
       impl # generate function implementation for go
-      gotools # contains tools like: godoc, goimports, etc.
       gopls # go language server
+      (pkgs.lib.lowPrio pkgs.gotools) # contains tools like: godoc, goimports, etc.
       delve # go debugger
 
       # -- java
@@ -131,7 +131,6 @@
       prettier # common code formatter
       fzf
       gdu # disk usage analyzer, required by AstroNvim
-      tree-sitter
       (ripgrep.override {withPCRE2 = true;}) # recursively searches directories for a regex pattern
     ]
   );
