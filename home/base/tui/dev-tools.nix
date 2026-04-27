@@ -21,11 +21,8 @@
     uv
 
     # db related
-    pgcli
+    pkgs-stable.pgcli
     sqlite
-
-    # ssh related
-    sshuttle
 
     # nodejs version managed
     mise
