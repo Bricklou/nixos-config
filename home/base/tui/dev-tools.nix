@@ -25,8 +25,6 @@
     sqlite
 
     # nodejs version managed
-    mise
-
     devenv
     inotify-info
     dbeaver-bin
@@ -41,20 +39,17 @@
       ])
   ];
 
-  xdg.configFile."fish/conf.d/mise.fish".text = ''
-    mise activate fish | source
-  '';
   xdg.configFile."fish/conf.d/pnpm.fish".text = ''
     set -Ux PNPM_HOME $HOME/.local/share/pnpm
-    set -Ua fish_user_paths $PNPM_HOME
+    fish_add_path $PNPM_HOME
   '';
 
-  programs = {
-    direnv = {
-      enable = true;
-      nix-direnv.enable = true;
-
-      enableBashIntegration = true;
-    };
-  };
+  # programs = {
+  #   direnv = {
+  #     enable = true;
+  #     nix-direnv.enable = true;
+  #
+  #     enableBashIntegration = true;
+  #   };
+  # };
 }

@@ -1,4 +1,8 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  lib,
+  ...
+}: let
   shellAliases = {
     "z" = "open_zellij";
     "zj" = "open_zellij";
@@ -22,7 +26,7 @@ in {
     enableFishIntegration = false;
   };
   # auto start zellij in fish shell
-  programs.fish.interactiveShellInit = ''
+  programs.fish.interactiveShellInit = lib.mkAfter ''
     # auto start zellij
     # except when in emacs or zellij itself
     if not test -n "$ZELLIJ"; and not test -n "$INSIDE_EMACS"; and not test -n "$VSCODE_STABLE"
@@ -54,6 +58,18 @@ in {
           # Not inside Zellij, open it
           ${zellijBin}
         end
+      end
+    end
+
+    function mise_post_init --on-event fish_prompt
+      # This only runs once, the very first time your prompt appears
+      if not set -q __mise_initialized
+        mise activate fish | source
+        mise completion fish | source
+        set -g __mise_initialized 1
+        # Optional: manually trigger the first refresh
+        # because we missed the 'init' window
+        mise env --shell fish | source
       end
     end
   '';
