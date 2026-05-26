@@ -1,6 +1,7 @@
 {
   pkgs,
   pkgs-stable,
+  lib,
   ...
 }: {
   ############################################################
@@ -28,6 +29,8 @@
     devenv
     inotify-info
     dbeaver-bin
+
+    (lib.lowPrio pkgs-stable.ollama)
 
     (with pkgs-stable.dotnetCorePackages;
       combinePackages [
